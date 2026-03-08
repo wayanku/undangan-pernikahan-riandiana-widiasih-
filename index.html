@@ -1,0 +1,1729 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Undangan Pernikahan - Riandiana & Widiasih</title>
+
+    <!-- Meta Tags Social Media (Data tidak berubah) -->
+    <link rel="icon" href="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.20.webp?raw=true" type="image/jpeg">
+    <meta property="og:title" content="Undangan Pernikahan: Riandiana & Widiasih">
+    <meta property="og:description" content="Kami mengundang Anda untuk hadir di acara pernikahan kami. Senin, 23 Maret 2026.">
+    <meta property="og:image" content="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.20.webp?raw=true" id="meta-og-image">
+    <meta property="og:url" content="https://URL-UNDANGAN-ANDA.com">
+    <meta property="og:type" content="website">
+
+    <!-- [TEMA BARU] IMPORT FONT KUSTOM -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@700&family=Pinyon+Script&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    
+    <!-- [KREASI BARU] Link CSS untuk Carousel (Swiper.js) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- [TEMA BARU] CSS UTAMA -->
+    <style>
+        :root {
+            --color-gold: #B59451; /* Emas yang sedikit lebih redup dan hangat */
+            --color-gold-muted: #A88F59; /* Emas yang lebih redup untuk aksen sekunder */
+            --color-dark-bg: #1A1A1A; /* Latar belakang charcoal yang sangat gelap */
+            --color-dark-card: #242424; /* Latar belakang kartu yang sedikit lebih terang dari BG */
+            --color-text-light: #E8E8E8; /* Teks putih yang lebih lembut dan sedikit lebih terang */
+            --color-text-secondary: #9E9E9E; /* Teks abu-abu yang lebih halus */
+            --color-shadow: rgba(192, 160, 98, 0.1); /* Bayangan emas yang lebih subtil */
+            --font-display: 'Cormorant Upright', serif;
+            --font-body: 'Source Serif 4', serif;
+            --font-script: 'Pinyon Script', cursive;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        html, body { 
+            max-width: 100vw;
+            overflow-x: hidden;
+            /* [PERBAIKAN] Memastikan body mengisi seluruh tinggi layar, termasuk safe area */
+            min-height: 100vh;
+            min-height: 100dvh; /* Unit viewport dinamis untuk browser modern */
+            overflow-y: hidden; /* Default terkunci */
+        }
+        
+        html.scroll-enabled, body.scroll-enabled { 
+            overflow-y: auto; 
+        }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: var(--font-body);
+            background-color: var(--color-dark-bg);
+            color: var(--color-text-light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* [PERUBAHAN BARU] Latar belakang gambar utama yang berada di lapisan paling bawah */
+        .image-background, .image-background-2 {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: blur(1px) grayscale(0.3) brightness(0.7); /* [PERUBAHAN] Mengurangi efek filter agar foto lebih jelas */
+            z-index: -2;
+            /* [PERUBAHAN BARU] Menambahkan animasi crossfade */
+            animation: mainBgCrossfade 20s ease-in-out infinite;
+        }
+        .image-background {
+            background-image: url('https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.50.webp?raw=true');
+        }
+        .image-background-2 {
+            background-image: url('https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.54.webp?raw=true');
+            animation-delay: -10s; /* Mulai animasi di tengah jalan */
+        }
+
+        .fixed-background {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%; 
+            z-index: -1;
+            background-color: var(--color-dark-bg);
+            background-image: url('https://www.transparenttextures.com/patterns/dark-lines.png');
+            /* [PERUBAHAN] Menghapus animasi dan transisi, mengatur opacity permanen */
+            opacity: 0.85;
+        }
+
+        /* --- ANIMASI --- */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(216, 140, 114, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(192, 160, 98, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(192, 160, 98, 0); }
+        }
+        /* [PERUBAHAN BARU] Animasi flip untuk kartu ucapan */
+        @keyframes flipInX {
+            from { transform: perspective(400px) rotate3d(1, 0, 0, 90deg); animation-timing-function: ease-in; opacity: 0; }
+            40% { transform: perspective(400px) rotate3d(1, 0, 0, -20deg); animation-timing-function: ease-in; }
+            60% { transform: perspective(400px) rotate3d(1, 0, 0, 10deg); opacity: 1; }
+            80% { transform: perspective(400px) rotate3d(1, 0, 0, -5deg); }
+            to { transform: perspective(400px); }
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(216, 140, 114, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(192, 160, 98, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(192, 160, 98, 0); }
+        }
+        /* [PERUBAHAN BARU] Animasi untuk memudarkan latar belakang gelap */
+        @keyframes backgroundFade {
+            0%, 100% { opacity: 1; } /* Latar gelap terlihat penuh */
+            50% { opacity: 0.2; } /* Latar gelap memudar, foto di belakangnya terlihat */
+        }
+        
+        /* [PERUBAHAN BARU] Animasi crossfade untuk latar belakang utama */
+        @keyframes mainBgCrossfade {
+            0%, 40%, 100% { opacity: 1; }
+            50%, 90% { opacity: 0; }
+        }
+
+        /* [PERUBAHAN BARU] Animasi Ken Burns untuk latar belakang */
+        @keyframes kenBurns {
+            0%, 100% { transform: scale(1.1) translate(0, 0); }
+            50% { transform: scale(1.15) translate(-2%, 2%); }
+        }
+        /* [KREASI BARU] Animasi berputar untuk tombol musik */
+        @keyframes spin {
+            from { transform: rotate(0deg); } to { transform: rotate(360deg); }
+        }
+        /* [PERUBAHAN BARU] Animasi untuk mengganti gambar latar */
+        @keyframes imageCrossfade {
+            0%, 20% { opacity: 1; } /* Tahan gambar pertama */
+            25%, 45% { opacity: 0; } /* Transisi ke gambar kedua */
+            50%, 70% { opacity: 0; } /* Tahan gambar kedua (tidak terlihat) */
+            75%, 95% { opacity: 0; } /* Transisi kembali */
+            100% { opacity: 1; }
+        }
+
+        .hidden { 
+            opacity: 0;
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition-delay: var(--delay, 0s);
+        }
+        .anim-fade-in-up { transform: translateY(50px); }
+        .anim-zoom-in { transform: scale(0.9); }
+        /* [KREASI BARU] Animasi dari samping */
+        .anim-fade-in-left { transform: translateX(-50px); } .anim-fade-in-right { transform: translateX(50px); }
+        .visible { opacity: 1; transform: translateY(0) scale(1); }
+
+        /* --- HALAMAN DEPAN (COVER) --- */
+        #cover {
+            position: relative; height: 100vh;
+            display: flex; flex-direction: column; justify-content: flex-end; align-items: center; text-align: center;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
+            color: var(--color-text-light);
+            z-index: 10;
+            /* [PERBAIKAN] Menambahkan padding-bottom untuk mengakomodasi safe-area dan menggantikan margin-bottom pada .recipient-box */
+            padding: 20px 20px calc(10vh + env(safe-area-inset-bottom)) 20px;
+        }
+        .cover-background-image {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: blur(2px) brightness(0.8);
+            transform: scale(1.1);
+        }
+        .cover-content h1 {
+            font-family: var(--font-display);
+            font-size: clamp(4rem, 15vw, 6.5rem);
+            margin: 0; color: var(--color-text-light); font-weight: 400;
+            text-shadow: 0 3px 15px rgba(0,0,0,0.3);
+            animation: fadeIn 1.5s 0.5s both;
+        }
+        .cover-content .and-symbol {
+            font-size: clamp(2rem, 10vw, 3.5rem);
+            margin: 0.5rem 0;
+        }
+        .cover-content .date {
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: fadeIn 1.5s 0.8s both;
+        }
+        .recipient-box {
+            /* [PERBAIKAN] Menghapus margin-bottom untuk mencegah "bocoran" layout. Jarak bawah sekarang diatur oleh padding pada #cover */
+            margin-top: 20px;
+            padding: 10px 25px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50px;
+            background-color: rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
+            animation: fadeInUp 1s 1.2s both;
+        }
+        .recipient-box p { margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--color-text-secondary); }
+        #guest-name { font-weight: bold; font-size: 1.1rem; color: var(--color-gold); }
+        
+        /* --- KONTEN UTAMA --- */
+        #main-content { 
+            display: none;
+            max-width: 800px; margin: 0 auto; padding: 10vh 20px; text-align: center; 
+            position: relative;
+        }
+        .section { 
+            margin-bottom: 15vh; /* Mengembalikan margin bawah seperti semula */
+            position: relative;
+        }
+        /* Menghapus border bawah untuk seksi terakhir */
+        footer.section { padding-bottom: 5vh; }
+
+        #main-content p { line-height: 1.8; font-size: clamp(1rem, 2.5vw, 1.05rem); color: var(--color-text-secondary); }
+        .section h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 10vw, 3.5rem);
+            color: var(--color-gold);
+            font-weight: 700;
+            margin: 0 0 1rem 0;
+            line-height: 1.2;
+            text-transform: none; /* Menghapus uppercase */
+        }
+        .section .subtitle {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--color-gold-muted);
+            font-weight: 500;
+            font-size: 0.8rem;
+            margin-bottom: 2rem;
+        }
+        
+        .name {
+            /* [PERUBAHAN] Menggunakan font skrip untuk nama mempelai */
+            font-family: var(--font-script);
+            font-size: clamp(3.5rem, 12vw, 4.5rem);
+            color: var(--color-gold);
+            margin: 10px 0;
+            font-weight: 400; /* Font skrip biasanya tidak perlu bold */
+        }
+        .parents {
+            font-size: clamp(1rem, 4vw, 1.1rem);
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+        /* [KREASI BARU] Styling untuk pemisah nama orang tua */
+        .parents-separator {
+            font-family: var(--font-display); /* [PERBAIKAN] Mengganti font agar lebih tebal & jelas */
+            font-size: 1.5rem; /* [PERBAIKAN] Menyesuaikan ukuran font */
+            color: var(--color-gold-muted);
+            margin: -0.25rem 0; /* [PERBAIKAN] Mengurangi margin agar lebih rapat */
+        }
+        
+        .mempelai-container {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .mempelai-card {
+            /* [PERUBAHAN] Latar belakang gradien dan border gradien untuk tampilan lebih elegan */
+            /* [PERUBAHAN] Menambahkan efek glassmorphism dengan backdrop-filter */
+            background: rgba(36, 36, 36, 0.65); /* Latar belakang semi-transparan */
+            backdrop-filter: blur(10px);
+            border-radius: 200px 200px 15px 15px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.2); /* Shadow lebih sederhana */
+            padding: 20px; 
+            margin-top: 20px;
+            border: 1px solid transparent;
+            border-image: linear-gradient(145deg, var(--color-gold), rgba(181, 148, 81, 0.25)) 1; /* Gradasi border lebih cerah */
+            position: relative;
+            transition: transform 0.4s ease, box-shadow 0.4s ease; /* [PERUBAHAN] Menambahkan transisi halus */
+        }
+        /* [PERBAIKAN] Styling untuk gambar cincin, dipindahkan ke luar media query */
+        .and-separator img {
+            width: clamp(45px, 8vw, 55px); /* [PERBAIKAN] Ukuran sedikit diperbesar */
+            height: auto;
+            margin: 1rem 0; /* Memberi sedikit ruang di tampilan mobile */
+        }
+        .mempelai-card .mempelai-image-wrapper {
+            width: 180px; height: 180px;
+            border-radius: 50%; 
+            overflow: hidden;
+            margin: -80px auto 20px auto;
+            border: 8px solid var(--color-dark-bg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.4s ease; /* [PERUBAHAN] Transisi untuk gambar */
+        }
+        .mempelai-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 25px 55px rgba(0,0,0,0.3), 0 0 25px -5px var(--color-shadow); /* [PERUBAHAN] Efek glow saat hover */
+        }
+        .mempelai-card:hover .mempelai-image-wrapper { transform: scale(1.05); }
+
+        .mempelai-card img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* [KREASI BARU] Ornamen untuk kartu mempelai dari contoh */
+        .card-ornament {
+            position: absolute;
+            width: clamp(80px, 20vw, 120px);
+            height: auto;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .card-ornament.bottom-right { bottom: -1px; right: -1px; transform: scaleX(-1); border-radius: 0 0 15px 0; }
+        .card-ornament.bottom-left { bottom: -1px; left: -1px; border-radius: 0 0 0 15px; }
+        
+        .quote {
+            margin-top: 40px; padding: 30px;
+            border: 1px solid var(--color-gold-muted);
+            border-radius: 20px;
+            background-color: var(--color-dark-card);
+            position: relative;
+        }
+        .quote::before {
+            content: '“';
+            position: absolute;
+            top: -20px; left: 20px;
+            font-family: 'Times New Roman', serif;
+            font-size: 5rem;
+            color: var(--color-gold-muted);
+            z-index: 1;
+        }
+        .quote p { position: relative; z-index: 2; }
+        .quote p:first-of-type { font-style: italic; font-size: 1.1rem; }
+        .quote-source { font-style: normal; font-weight: bold; display: block; margin-top: 15px; }
+        
+        /* [PERUBAHAN] Desain baru untuk kartu acara */
+        .event-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        /* [PERUBAHAN] Desain kartu acara */
+        .event-card {
+            background-color: rgba(30, 30, 30, 0.15); /* [PERUBAHAN] Dibuat lebih transparan */
+            backdrop-filter: blur(12px); /* [PERUBAHAN] Menambahkan efek blur */
+            border: 1px solid rgba(192, 160, 98, 0.3);
+            border-radius: 15px;
+            padding: 30px 25px; /* Menambah padding vertikal */
+            text-align: center;
+            flex: 1; /* Agar kartu memiliki lebar yang sama saat di desktop */
+            transition: transform 0.3s, box-shadow 0.3s; /* [PERUBAHAN] Menambahkan transisi */
+        }
+        .event-card h3 {
+            font-family: var(--font-display);
+            font-weight: 700; color: var(--color-gold);
+            font-size: 2.2rem; margin: 0 0 0.5rem 0;
+        }
+        .event-card p { font-size: 1rem; margin: 0.25rem 0; }
+        /* [PERUBAHAN] Styling untuk ikon acara */
+        .event-card .icon { color: var(--color-gold); margin-bottom: 1rem; }
+        /* [PERUBAHAN] Efek hover untuk kartu acara */
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2), 0 0 15px var(--color-shadow);
+        }
+
+        .map-button-outline {
+            display: inline-block;
+            /* [PERBAIKAN] Menerapkan efek Liquid Glass pada tombol lokasi */
+            background-color: color-mix(in srgb, var(--color-gold) 10%, transparent);
+            backdrop-filter: blur(10px) saturate(150%);
+            -webkit-backdrop-filter: blur(10px) saturate(150%);
+            color: var(--color-text-light);
+            border: none;
+            box-shadow: 
+                inset 0 0 0 1.5px color-mix(in srgb, #fff 10%, transparent),
+                inset 2px 1px 0px -1px color-mix(in srgb, #fff 70%, transparent), 
+                inset -1px 2px 3px -1px color-mix(in srgb, #000 15%, transparent), 
+                0px 3px 6px 0px color-mix(in srgb, #000 15%, transparent);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none; 
+            margin-top: 25px;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .map-button-outline:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.25), 0 0 15px -5px var(--color-shadow); background-color: color-mix(in srgb, var(--color-gold) 25%, transparent); color: var(--color-text-light); }
+
+        /* [PERUBAHAN] Desain baru untuk Countdown */
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: clamp(10px, 4vw, 30px); /* Jarak responsif */
+            margin-top: 3rem;
+        } 
+        .countdown-card {
+            position: relative;
+            aspect-ratio: 1 / 1; /* Membuat bentuknya selalu persegi */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(145deg, var(--color-dark-card), #2a2a2a);
+            border-radius: 50%; /* [PERUBAHAN] Mengubah menjadi lingkaran */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2), inset 0 3px 8px rgba(0,0,0,0.3);
+            border: 2px solid var(--color-gold-muted);
+        }
+        /* [KREASI BARU] Animasi flip pada kartu detik */
+        .countdown-card.tick {
+            animation: flip-card 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+        }
+        .countdown span {
+            display: block;
+            font-size: clamp(1.8rem, 10vw, 2.8rem); /* Ukuran font responsif */
+            font-weight: 700; color: var(--color-text-light); line-height: 1;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        }
+        .countdown small {
+            font-size: clamp(0.7rem, 2vw, 0.8rem);
+            letter-spacing: 1px;
+            text-transform: uppercase; color: var(--color-gold);
+        }
+        
+        .gallery-grid {
+            /* [PERUBAHAN] Mengadopsi layout galeri masonry dari contoh */
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-auto-flow: dense;
+            gap: 1rem;
+            margin-top: 20px;
+        }
+        .gallery-grid .gallery-item {
+            margin-bottom: 1rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        /* [KREASI BARU] Kelas untuk variasi ukuran gambar dari contoh */
+        .gallery-item.item-tall { grid-row: span 2; }
+        .gallery-item.item-wide { grid-column: span 2; }
+
+        .gallery-grid .gallery-item img {
+            width: 100%; height: auto; display: block;
+            transition: transform 0.4s ease;
+        }
+        .gallery-grid .gallery-item:hover img { transform: scale(1.05); }
+
+        .divider {
+            /* [PERUBAHAN] Mengganti divider dengan gambar */
+            height: 60px; /* Menyesuaikan tinggi agar gambar tidak terpotong */
+            margin: 4rem auto;
+            border: 0;
+            background-image: url("https://github.com/wayanku/pernikahan-tema-2/blob/main/pemisah.webp?raw=true");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        /* [KREASI BARU] Latar belakang gradasi hijau untuk section dari contoh */
+        #galeri, #rsvp {
+            position: relative;
+            padding-top: 5vh; padding-bottom: 5vh;
+            margin-left: -20px; margin-right: -20px;
+            padding-left: 20px; padding-right: 20px;
+        }
+        #galeri::before, #rsvp::before {
+            content: '';
+            position: absolute; top: -20vh; left: 0;
+            width: 100%; height: calc(100% + 40vh);
+            background: linear-gradient(to bottom, transparent 0%, rgba(192, 160, 98, 0.05) 25%, rgba(192, 160, 98, 0.05) 75%, transparent 100%);
+            z-index: -2;
+        }
+
+        /* [PERUBAHAN BARU] Latar belakang tambahan untuk section tertentu */
+        #mempelai::before, #galeri::before {
+            content: '';
+            position: absolute;
+            top: -50vh; left: -5vw; /* [PERUBAHAN] Geser ke kiri untuk menutupi pinggiran */
+            width: 110vw; height: calc(100% + 100vh); /* [PERUBAHAN] Lebarkan untuk menutupi seluruh viewport */
+            background: linear-gradient(180deg, rgba(26, 26, 26, 0) 0%, rgba(26, 26, 26, 0.9) 25%, rgba(26, 26, 26, 0.9) 75%, rgba(26, 26, 26, 0) 100%); /* [PERUBAHAN] Latar dibuat sedikit lebih transparan */
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        #mempelai.bg-visible::before, #galeri.bg-visible::before {
+            opacity: 1;
+        }
+
+
+        /* [PERUBAHAN BARU] Menambahkan ornamen bunga */
+        .ornament-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: -1; }
+        .ornament-image {
+            position: absolute;
+            width: clamp(120px, 25vw, 200px);
+            opacity: 0.5;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.05));
+        }
+        .ornament-top-right { top: -5vh; right: -5vw; }
+        .ornament-bottom-left { bottom: -5vh; left: -5vw; transform: scaleX(-1); }
+
+        /* [PERBAIKAN] Desain baru untuk tombol musik */
+        #music-toggle {
+            position: fixed;
+            /* [PERBAIKAN] Pindah ke kiri bawah & beri ruang untuk safe area iPhone */
+            bottom: calc(85px + env(safe-area-inset-bottom)); /* [PERBAIKAN] Pindah ke kanan & lebih atas */
+            right: 20px;
+            z-index: 99;
+            width: 50px; height: 50px; 
+            background-color: var(--color-gold);
+            color: white;
+            border-radius: 50%;
+            display: none;
+            align-items: center; justify-content: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+            border: 2px solid rgba(255,255,255,0.5);
+            transition: transform 0.3s;
+        }
+        #music-toggle:hover { transform: scale(1.1); }
+        #music-toggle.show { display: flex; }
+        /* [PERBAIKAN] Menggunakan animasi berputar */
+        #music-toggle.playing { animation: spin 4s linear infinite; }
+    </style>
+
+    <!-- [TEMA BARU] CSS UNTUK KOMPONEN SPESIFIK -->
+    <style>
+        /* FORM RSVP */
+        /* [PERBAIKAN] Desain baru untuk kontainer RSVP */
+        /* [PERUBAHAN] Mengadopsi gaya 'glass' dari navigasi */
+        .rsvp-wishes-container {
+            background-color: rgba(30, 30, 30, 0.15); /* [PERUBAHAN] Dibuat lebih transparan lagi */
+            backdrop-filter: blur(12px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25), 0 0 15px -5px var(--color-shadow);
+            border: 1px solid rgba(192, 160, 98, 0.3);
+        }
+        .rsvp-form { text-align: left; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label, .form-group legend {
+            display: block; margin-bottom: 8px; font-weight: 500; color: var(--color-text-light); font-size: 0.9rem;
+        }
+        /* [PERBAIKAN] Desain input field yang lebih minimalis */
+        .form-group input[type=text], .form-group textarea, .form-group select {
+            width: 100%; padding: 12px 5px;
+            border: none;
+            border-bottom: 2px solid var(--color-gold-muted);
+            background-color: transparent;
+            border-radius: 0;
+            font-family: var(--font-body); font-size: 1.1rem;
+            transition: border-color 0.3s;
+            color: var(--color-text-light);
+        }
+        .form-group input[type=text]:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none; border-color: var(--color-gold);
+        }
+        .kehadiran-options {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+        }
+        .kehadiran-options label {
+            text-align: center; padding: 12px; cursor: pointer;
+            border: 1px solid var(--color-gold-muted); border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .kehadiran-options input[type=radio] { display: none; }
+        .kehadiran-options input[type=radio]:checked + label {
+            background-color: var(--color-gold); color: var(--color-dark-bg); border-color: var(--color-gold);
+        }
+        /* [PERBAIKAN] Desain baru untuk tombol RSVP */
+        .rsvp-button {
+            width: 100%; background: var(--color-gold); color: var(--color-dark-bg); border: none; padding: 15px;
+            border-radius: 50px; font-family: var(--font-body); font-size: 1.1rem; font-weight: 600; cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+        }
+        .rsvp-button:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); background-color: var(--color-gold-muted); }
+
+        /* UCAPAN & DOA */
+        /* [PERUBAHAN BARU] Styling untuk kontrol paginasi */
+        .wishes-pagination {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+            padding: 0 10px;
+        }
+        .pagination-button { background: none; border: 1px solid var(--color-gold-muted); color: var(--color-gold-muted); padding: 8px 15px; border-radius: 5px; cursor: pointer; transition: all 0.3s; }
+        .pagination-button:hover:not(:disabled) { background-color: var(--color-gold); color: var(--color-dark-bg); }
+        .pagination-button:disabled { opacity: 0.4; cursor: not-allowed; }
+        .wishes-gallery {
+            /* [PERBAIKAN] Mengubah layout menjadi grid untuk tampilan yang lebih rapi */
+            margin-top: 2rem;
+            /* [PERUBAHAN] Menghapus grid dan scroll, membiarkan kartu mengalir */
+            gap: 1rem;
+            /* max-height: 500px; */
+            /* overflow-y: auto; */
+            padding: 5px;
+        }
+        .wish-card {
+            /* [PERUBAHAN] Desain kartu ucapan yang lebih elegan */
+            /* [PERUBAHAN BARU] Mengadopsi gaya 'glass' */
+            background-color: rgba(30, 30, 30, 0.15); /* [PERUBAHAN] Dibuat lebih transparan */
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(192, 160, 98, 0.3);
+            position: relative;
+            margin-bottom: 1rem; /* [PERUBAHAN] Mengganti gap dengan margin-bottom */
+            padding-top: 40px; /* Ruang untuk ikon kutipan */
+            transition: transform 0.4s ease, box-shadow 0.4s ease; /* [PERUBAHAN BARU] Transisi untuk efek hover */
+        }
+        .wish-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2), 0 0 20px -5px var(--color-shadow);
+        }
+        .wish-card .sender-name { font-weight: 700; color: var(--color-gold); margin-bottom: 5px; }
+        .wish-card p { margin: 0; font-size: 0.95rem; line-height: 1.6; color: var(--color-text-secondary); }
+        .wish-card::before { content: '“'; position: absolute; top: 10px; left: 20px; font-family: var(--font-display); font-size: 3.5rem; color: rgba(181, 148, 81, 0.25); }
+        /* [PERUBAHAN BARU] Ornamen kecil untuk kartu ucapan */
+        .wish-card .card-ornament-small { position: absolute; width: 40px; height: auto; opacity: 0.3; bottom: 10px; right: 15px; transform: scaleX(-1); }
+
+        /* KIRIM HADIAH */
+        /* [PERUBAHAN BESAR] Desain ulang menjadi seperti kartu kredit premium */
+        /* [PERUBAHAN BARU] Menambahkan perspektif untuk efek 3D */
+        .gift-card-container {
+            perspective: 1000px;
+            max-width: 400px;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+        .gift-card {
+            /* [PERUBAHAN BARU] Properti untuk animasi flip */
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1.586 / 1; /* Rasio kartu kredit */
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 10px 30px 5px rgba(0,0,0,0.3);
+            border-radius: 15px;
+        }
+        .gift-card-container.flipped .gift-card {
+            transform: rotateY(180deg);
+        }
+        .gift-card-face {
+            position: absolute;
+            width: 100%; height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+            color: white;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .gift-card-front {
+            background: linear-gradient(135deg, #242424 0%, #1A1A1A 50%, #C0A062 100%);
+            z-index: 2;
+        }
+        .gift-card-back {
+            background: linear-gradient(135deg, #333, #222);
+            transform: rotateY(180deg);
+            align-items: center;
+        }
+        .gift-card .card-chip {
+            width: 50px; height: 40px; border-radius: 5px;
+            /* [PERUBAHAN] Mengembalikan warna chip menjadi emas */
+            background-image: linear-gradient(to bottom left, #ffecc7, #d0b978);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        /* [PERUBAHAN BARU] Menambahkan detail garis pada chip */
+        .gift-card .chip-line {
+            position: absolute; width: 100%; height: 1px; background-color: rgba(0,0,0,0.15);
+        }
+        .gift-card .chip-line:nth-child(1) { top: 13px; }
+        .gift-card .chip-line:nth-child(2) { top: 20px; }
+        .gift-card .chip-line:nth-child(3) { top: 28px; }
+        .gift-card .chip-line:nth-child(4) { left: 25px; width: 1px; height: 100%; }
+        .gift-card .chip-main {
+            width: 20px; height: 25px; border: 1px solid rgba(0,0,0,0.15); border-radius: 3px;
+            background-image: linear-gradient(to bottom left, #efdbab, #e1cb94);
+        }
+        .gift-card .card-number {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: clamp(1.2rem, 5vw, 1.5rem);
+            letter-spacing: 3px;
+            margin-top: 10px;
+        }
+        .gift-card .card-holder {
+            font-family: 'Courier New', Courier, monospace;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        .gift-card .bank-logo {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            max-height: 25px;
+            filter: brightness(0) invert(1) drop-shadow(0 0 2px rgba(0,0,0,0.5));
+        }
+        .gift-card-front .gift-card-header, .gift-card-front .gift-card-footer {
+            position: relative;
+            z-index: 2;
+        }
+        .gift-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .copy-button {
+            /* [PERUBAHAN] Tombol salin yang lebih kecil dan terintegrasi */
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: transform 0.2s;
+        }
+        .copy-button:hover { transform: scale(1.05); }
+        /* [PERUBAHAN BARU] Styling untuk bagian belakang kartu */
+        .gift-card-back .magnetic-strip {
+            width: 100%;
+            height: 50px;
+            background: #111;
+            margin-top: 20px;
+        }
+        .gift-card-back .back-content {
+            width: 100%;
+            padding: 20px;
+            text-align: right;
+        }
+        .gift-card-back .signature-strip {
+            background: #fff;
+            height: 40px;
+            width: 80%;
+            margin-top: 10px;
+            margin-left: auto;
+        }
+
+        /* FOOTER */
+        .creator-credit a { color: var(--color-gold); font-weight: 600; text-decoration: none; }
+        .social-links a { color: var(--color-gold); }
+        .social-links a:hover { color: var(--color-text-light); }
+        
+        /* [TEMA BARU] AMPLOP */
+        #envelope-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; justify-content: center; align-items: center; padding: 20px;
+            /* [PERBAIKAN] Mengubah background menjadi solid untuk mencegah 'flash' saat gambar berganti.
+               Gradien gelap sekarang diterapkan pada overlay terpisah. */
+            background-color: var(--color-dark-bg);
+            z-index: 100;
+            color: var(--color-text-light); /* [PERUBAHAN] Mengubah warna teks default menjadi terang */
+            transition: opacity 1s ease;
+        }
+
+        /* --- [PERBAIKAN KUNCI] --- */
+        /* CSS ini sekarang menargetkan #envelope-container, yang sesuai dengan JavaScript */
+        #envelope-container.opened {
+            opacity: 0;
+            pointer-events: none; /* Mencegah elemen yang tak terlihat di-klik */
+        }
+        
+        /* [PERBAIKAN BARU] Menambahkan overlay gradien di atas gambar */
+        #envelope-container::before {
+            content: '';
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+            z-index: 1; /* [PERBAIKAN] Overlay di atas gambar */
+            pointer-events: none;
+        }
+
+        /* [PERUBAHAN BARU] Menambahkan gambar latar belakang untuk amplop */
+        .envelope-background-image {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+            filter: blur(1px) brightness(0.9); z-index: -2;
+            animation: kenBurns 30s ease-in-out infinite;
+        }
+        /* [PERUBAHAN BARU] Styling untuk gambar yang berganti */
+        #envelope-bg-1 {
+            animation-delay: 0s, 0s; /* kenBurns, imageCrossfade */
+            animation-name: kenBurns, imageCrossfade;
+            animation-duration: 30s, 20s; /* Durasi kenBurns, durasi crossfade */
+            animation-timing-function: ease-in-out, ease-in-out;
+            animation-iteration-count: infinite, infinite;
+        }
+        #envelope-bg-2 {
+            animation-delay: -10s, -10s; /* Mulai animasi di tengah jalan */
+            animation-name: kenBurns, imageCrossfade;
+            animation-duration: 30s, 20s;
+            animation-timing-function: ease-in-out, ease-in-out;
+            animation-iteration-count: infinite, infinite;
+        }
+
+        /* [PERBAIKAN] Menambahkan z-index agar konten amplop berada di lapisan paling atas */
+        .envelope-content { 
+            position: relative; /* [PERBAIKAN] Membuat konten menjadi relative */
+            z-index: 2; /* [PERBAIKAN] Konten di atas overlay */
+            text-align: center; animation: fadeInUp 1s 0.2s both; }
+        .envelope-content h2 { font-family: var(--font-display); font-size: clamp(3rem, 12vw, 4.5rem); color: var(--color-text-light); margin: 0; text-shadow: 0 3px 15px rgba(0,0,0,0.4); font-weight: 400; }
+        .envelope-recipient { margin-top: 1rem; margin-bottom: 0.5rem; }
+        #envelope-guest-name { font-weight: bold; font-size: 1.2rem; color: var(--color-gold); }
+        #open-envelope-button {
+            background-color: var(--color-gold); color: var(--color-dark-bg); border: 1px solid rgba(255,255,255,0.5); padding: 12px 35px;
+            border-radius: 50px; font-family: var(--font-body); font-size: 1rem; cursor: pointer;
+            margin-top: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            animation: fadeInUp 1s 0.6s both, pulse 2.5s infinite 1.5s;
+        }
+        #open-envelope-button:hover { background-color: var(--color-gold-muted); color: var(--color-dark-bg); transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
+        /* [PERUBAHAN BARU] Grup untuk nama tamu dan tombol */
+        .envelope-guest-area {
+            margin-top: 1.5rem;
+            animation: fadeInUp 1s 0.4s both;
+        }
+
+        /* [PERBAIKAN] Styling untuk video agar responsif di semua perangkat */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 640px; /* Batas lebar maksimum di desktop */
+            margin: 0 auto;
+            aspect-ratio: 16 / 9; /* Menjaga rasio video */
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        /* [PERBAIKAN] Menambahkan styling iframe agar mengisi kontainer di semua perangkat */
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+        }
+        /* --- [RESPONSIVE] MEDIA QUERIES UNTUK DESKTOP --- */
+        @media (min-width: 768px) {
+            #main-content { padding: 15vh 40px; }
+            .mempelai-container {
+                grid-template-columns: 1fr auto 1fr;
+                align-items: center;
+                gap: 2rem; /* Menambahkan gap untuk desktop */
+            }
+            .mempelai-container .and-separator {
+                display: flex; /* [KREASI BARU] Menggunakan flexbox untuk menengahkan gambar */
+                justify-content: center;
+                align-items: center;
+                /* [PERBAIKAN] Menghapus properti font karena sekarang berisi gambar */
+            }
+            /* [KREASI BARU] Styling untuk gambar cincin di antara mempelai */
+            .mempelai-container .and-separator img { margin: 0; } /* Reset margin untuk desktop */
+            .mempelai-card { margin-top: 0; }
+            .countdown { gap: 20px; }
+            /* [PERUBAHAN] Tata letak grid untuk kartu acara di desktop */
+            .event-grid {
+                flex-direction: row;
+                justify-content: center;
+            }
+            /* [PERUBAHAN] Menghapus masonry, tetap 1 kolom untuk paginasi */
+            .wishes-gallery {
+                /* column-count: 2; */
+                /* column-gap: 1rem; */
+            }
+        }
+
+        /* [PERUBAHAN BARU] Menu Navigasi Bawah - Menggunakan Flexbox untuk centering */
+        .bottom-nav-container {
+            position: fixed;
+            bottom: calc(15px + env(safe-area-inset-bottom)); /* [PERBAIKAN] Menambahkan safe area untuk iPhone */
+            left: 0;
+            right: 0;
+            z-index: 98;
+            display: none; /* Default tersembunyi */
+            justify-content: center; /* [PERBAIKAN] Kunci untuk memusatkan menu */
+            pointer-events: none; /* Kontainer tidak bisa di-klik */
+        }
+        .bottom-nav-container.show { display: flex; }
+
+        #bottom-nav {
+            width: 90%;
+            max-width: 350px;
+            /* [PERUBAHAN BARU] Menerapkan efek Liquid Glass */
+            background-color: color-mix(in srgb, var(--color-gold) 8%, transparent);
+            backdrop-filter: blur(10px) url(#liquid-nav-filter) saturate(150%);
+            -webkit-backdrop-filter: blur(10px) saturate(150%);
+            box-shadow: 
+                inset 0 0 0 1.5px color-mix(in srgb, #fff 15%, transparent),
+                inset 1.8px 3px 0px -2px color-mix(in srgb, #fff 80%, transparent), 
+                inset -0.3px -1px 4px 0px color-mix(in srgb, #000 12%, transparent), 
+                0px 6px 16px 0px color-mix(in srgb, #000 10%, transparent);
+            border: none; /* Menghapus border lama */
+            border-radius: 50px; /* [PERUBAHAN] Membuat sudut melengkung */
+            animation: fadeInUp 0.5s 0.5s both;
+            pointer-events: auto; /* Menu bisa di-klik */
+            transition: 
+                background-color 400ms cubic-bezier(1, 0.0, 0.4, 1),
+                box-shadow 400ms cubic-bezier(1, 0.0, 0.4, 1);
+        }
+        .nav-list {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            margin: 0;
+            padding: 8px 0;
+        }
+        .nav-item a {
+            display: flex; flex-direction: column; align-items: center;
+            text-decoration: none; color: var(--color-text-secondary);
+            font-size: 0.7rem; padding: 5px 10px;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .nav-item a:hover { transform: translateY(-3px); }
+        .nav-item a.active { color: var(--color-gold); font-weight: 700; }
+        .nav-item a svg { margin-bottom: 4px;
+        }
+
+        /* [KREASI BARU] SVG Filter untuk efek liquid glass di navigasi */
+        .liquid-nav-filter-svg {
+            position: absolute;
+            width: 0;
+            height: 0;
+            z-index: -1;
+        }
+        #bottom-nav:hover {
+            /* Efek hover sederhana untuk interaksi */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3), 0 0 20px -5px var(--color-shadow);
+        }
+
+        /* [KREASI BARU] CSS untuk Carousel (Swiper.js) */
+        .swiper-container {
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 40px; /* Ruang untuk navigasi & pagination */
+        }
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px; /* Lebar slide */
+            height: 400px; /* Tinggi slide */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Styling untuk tombol navigasi */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--color-text-light);
+            background-color: rgba(30, 30, 30, 0.5); /* [PERUBAHAN] Latar belakang lebih gelap & transparan */
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background-color: rgba(30, 30, 30, 0.8); /* [PERUBAHAN] Efek hover */
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- [PERUBAHAN BARU] Menambahkan elemen untuk latar belakang gambar */ -->
+    <div class="image-background"></div>
+    <div class="image-background-2"></div>
+    <div class="fixed-background"></div>
+
+    <!-- [TEMA BARU] Halaman Amplop -->
+    <div id="envelope-container">
+        <!-- [PERUBAHAN BARU] Menambahkan DUA gambar latar untuk efek crossfade -->
+        <img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.50.webp?raw=true" alt="Latar Belakang Amplop 1" class="envelope-background-image" id="envelope-bg-1">
+        <img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.54.webp?raw=true" alt="Latar Belakang Amplop 2" class="envelope-background-image" id="envelope-bg-2">
+        <!-- [PERBAIKAN] Menghapus .envelope-wrapper yang tidak perlu -->
+        <div class="envelope-content">
+            <h2>Riandiana & Widiasih</h2>
+            <div class="envelope-guest-area">
+                <p class="envelope-recipient">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+                <strong id="envelope-guest-name">Tamu Undangan</strong>
+            </div>
+            <button id="open-envelope-button">Buka Undangan</button>
+        </div>
+    </div>
+
+    <!-- Audio Player (Fungsionalitas tidak berubah) -->
+    <audio id="background-music" loop preload="auto">
+        <source src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/main/Marry%20Your%20Daughter%20-%20Brian%20McKnight%20(animation).mp3" type="audio/mpeg">
+    </audio>
+    <div id="music-toggle">
+        <!-- [PERBAIKAN] Mengganti ikon menjadi not balok -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+    </div>
+
+    <!-- [TEMA BARU] Sampul Depan -->
+    <header id="cover">
+        <img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.20.webp?raw=true" alt="Pasangan" class="cover-background-image" loading="eager">
+        <div class="cover-content">
+            <h1 id="groom-cover-name">Agus</h1>
+            <span class="and-symbol">&</span>
+            <h1 id="bride-cover-name">Swasti</h1>
+            <p class="date" id="cover-date"></p>
+            <div class="recipient-box" id="recipient-box">
+                <p>Kepada Yth. Bapak/Ibu/Saudara/i<br><strong id="guest-name">Tamu Undangan</strong></p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Konten Utama Undangan (Struktur HTML sama, styling berubah via CSS) -->
+    <main id="main-content">
+        
+        <section id="pembuka" class="section">
+             <div class="hidden anim-zoom-in" style="margin-bottom: 1rem;">
+                <img src="https://raw.githubusercontent.com/wayanku/undangan-metatah/main/o-swastyastu-1-300x98-1,OM-SANTIH1,swastika12/o-swastyastu-1-300x98-1.webp" alt="Om Swastyastu" style="width: 220px; height: auto;">
+            </div> 
+            <p class="hidden anim-fade-in-up" style="--delay: 0.2s; color: var(--color-text-light);">
+                Atas Asung Kertha Wara Nugraha Ida Sang Hyang Widhi Wasa/Tuhan Yang Maha Esa, kami bermaksud mengundang Bapak/Ibu/Saudara/i pada Upacara Manusa Yadnya 
+                <strong id="ceremony-subject" style="color: inherit; font-weight: inherit;"></strong>
+            </p>
+        </section>
+
+        <section id="mempelai" class="section">
+            <h2 class="hidden anim-fade-in-up" style="margin-bottom: 4rem;">Sang Mempelai</h2>
+            
+            <div class="mempelai-container">
+                <div class="mempelai-card-wrapper hidden anim-fade-in-up" style="--delay: 0.2s;">
+                    <div id="mempelai-pria" class="mempelai-card">
+                        <div class="mempelai-image-wrapper">
+                            <img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.23.webp?raw=true" alt="Mempelai Pria" id="groom-card-image">
+                        </div>
+                        <h3 class="name" id="groom-name"></h3>
+                        <p id="groom-family-relation" style="margin-bottom: 0.5rem;"></p>
+                        <!-- [PERBAIKAN] Struktur baru untuk nama orang tua -->
+                        <p class="parents" id="groom-father-name" style="font-weight: 500; margin: 0;"></p>
+                        <p class="parents-separator">&</p>
+                        <p class="parents" id="groom-mother-name" style="font-weight: 500; margin: 0;"></p>
+                    </div>
+                    <!-- [KREASI BARU] Menambahkan ornamen di pojok kanan bawah dari contoh -->
+                    <img src="https://github.com/wayanku/undangan-pernikahan-adnyana-swasti/blob/main/UKIRAN%20POJOK%20.webp?raw=true" alt="Ornamen Kartu" class="card-ornament bottom-right">
+                </div>
+        
+                <div class="and-separator hidden anim-zoom-in"><img src="https://github.com/wayanku/pernikahan-tema-2/blob/main/cincin.webp?raw=true" alt="Cincin" loading="lazy"></div>
+    
+                <div class="mempelai-card-wrapper hidden anim-fade-in-up" style="--delay: 0.4s;">
+                    <div id="mempelai-wanita" class="mempelai-card">
+                        <div class="mempelai-image-wrapper">
+                            <img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.25.webp?raw=true" alt="Mempelai Wanita" id="bride-card-image">
+                        </div>
+                        <h3 class="name" id="bride-name"></h3>
+                        <p id="bride-family-relation" style="margin-bottom: 0.5rem;"></p>
+                        <!-- [PERBAIKAN] Struktur baru untuk nama orang tua -->
+                        <p class="parents" id="bride-father-name" style="font-weight: 500; margin: 0;"></p>
+                        <p class="parents-separator">&</p>
+                        <p class="parents" id="bride-mother-name" style="font-weight: 500; margin: 0;"></p>
+                    </div>
+                    <!-- [KREASI BARU] Menambahkan ornamen di pojok kiri bawah -->
+                    <img src="https://github.com/wayanku/undangan-pernikahan-adnyana-swasti/blob/main/UKIRAN%20POJOK%20.webp?raw=true" alt="Ornamen Kartu" class="card-ornament bottom-left">
+                </div>
+            </div>
+        </section>
+        
+        <hr class="divider hidden anim-zoom-in">
+
+        <section id="kutipan" class="section hidden anim-fade-in-up">
+            <!-- [PERUBAHAN BARU] Menambahkan ornamen bunga -->
+            <div class="ornament-container">
+                <img src="https://raw.githubusercontent.com/wayanku/undangan-metatah/main/tl.webp" alt="Ornamen Bunga" class="ornament-image ornament-top-right hidden anim-zoom-in" style="--delay: 0.5s;">
+                <img src="https://raw.githubusercontent.com/wayanku/undangan-metatah/main/tl.webp" alt="Ornamen Bunga" class="ornament-image ornament-bottom-left hidden anim-zoom-in" style="--delay: 0.5s;">
+            </div>
+             <div class="quote" id="quote-block">
+                <p class="hidden anim-fade-in-up" id="quote-text"></p>
+                <span class="hidden anim-fade-in-up quote-source" style="--delay: 0.2s;" id="quote-source"></span>
+                <p class="hidden anim-fade-in-up quote-translation" style="--delay: 0.4s;" id="quote-translation"></p>
+            </div>
+        </section>
+
+        <section id="acara" class="section">
+            <h2 class="hidden anim-fade-in-up">Save The Date</h2>
+            <p class="subtitle hidden anim-fade-in-up" style="--delay: 0.1s;">Detail Acara Pernikahan</p>
+            
+            <!-- [PERUBAHAN] Menggunakan struktur grid baru untuk kartu acara -->
+            <!-- [PERUBAHAN] Membagi detail acara menjadi 3 kartu terpisah -->
+            <div class="event-grid">
+                <div class="event-card hidden anim-fade-in-left" style="--delay: 0.2s;">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    </div>
+                    <h3 style="font-size: 1.8rem;">Tanggal</h3>
+                    <p id="event-date-text"></p>
+                </div>
+                <div class="event-card hidden anim-fade-in-up" style="--delay: 0.4s;">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <h3 style="font-size: 1.8rem;">Waktu</h3>
+                    <p id="event-time-text"></p>
+                </div>
+                <div class="event-card hidden anim-fade-in-right" style="--delay: 0.6s;">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <h3 style="font-size: 1.8rem;">Lokasi</h3>
+                    <p id="event-location-text"></p>
+                </div>
+            </div>
+
+            <a href="" target="_blank" class="map-button-outline hidden anim-fade-in-up" id="event-map-link" style="--delay: 0.5s;">Lihat Peta Lokasi</a>
+
+            <!-- [PERBAIKAN] Memindahkan teks penutup ke bawah detail acara -->
+            <div class="closing-text-block hidden anim-fade-in-up" style="margin-top: 4rem; --delay: 0.6s;">
+                <p>Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir untuk memberikan doa restu. Atas kehadiran dan doa restunya, kami ucapkan terima kasih.</p>
+                <div style="margin: 2rem 0;">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-metatah/main/o-swastyastu-1-300x98-1,OM-SANTIH1,swastika12/OM-SANTIH1.webp" alt="Om Shanti" style="width: 250px; height: auto;">
+                </div>
+                <p>Kami yang berbahagia,</p>
+                <p style="font-weight: bold;" id="closing-family-name-moved"></p>
+            </div>
+
+        </section>
+        
+        <section id="countdown-section" class="section">
+            <h2>Menuju Hari Bahagia</h2>
+            <div id="countdown" class="countdown">
+                <div class="countdown-card"><span id="days">00</span><small>Hari</small></div>
+                <div class="countdown-card"><span id="hours">00</span><small>Jam</small></div>
+                <div class="countdown-card"><span id="minutes">00</span><small>Menit</small></div>
+                <div class="countdown-card"><span id="seconds">00</span><small>Detik</small></div>
+            </div>
+        </section>
+
+        <hr class="divider hidden anim-zoom-in">
+
+        <section id="galeri" class="section">
+            <h2 class="hidden anim-fade-in-up">Momen Indah</h2>
+            <p class="subtitle hidden anim-fade-in-up" style="--delay: 0.1s;">Galeri Foto Kami</p>
+ 
+            <!-- [KREASI BARU] Galeri Carousel/Geser -->
+            <div class="swiper-container hidden anim-fade-in-left" style="--delay: 0.2s;">
+                <div class="swiper-wrapper"> 
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.50.webp?raw=true" alt="Galeri Geser 1" loading="lazy"></div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.54.webp?raw=true" alt="Galeri Geser 2" loading="lazy"></div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.56.webp?raw=true" alt="Galeri Geser 3" loading="lazy"></div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.57.webp?raw=true" alt="Galeri Geser 4" loading="lazy"></div>
+                    <!-- [PERBAIKAN] Menambahkan duplikat slide untuk memperbaiki loop mode -->
+                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.50.webp?raw=true" alt="Galeri Geser 1 Duplikat" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.54.webp?raw=true" alt="Galeri Geser 2 Duplikat" loading="lazy"></div>
+                </div>
+                <!-- Tombol Navigasi -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+            <!-- Galeri Masonry yang sudah ada -->
+            <div class="gallery-grid hidden anim-fade-in-right" style="--delay: 0.4s;">
+                <div class="gallery-item"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.54.webp?raw=true" alt="Galeri 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.56.webp?raw=true" alt="Galeri 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.57.webp?raw=true" alt="Galeri 4" loading="lazy"></div>
+                <div class="gallery-item item-tall"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.50.webp?raw=true" alt="Galeri 1" loading="lazy"></div>
+            </div>
+        </section>
+
+        <section id="video" class="section hidden anim-fade-in-up">
+            <h2>Video Prewedding</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/hT0XG2j6wng" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <hr class="divider hidden anim-zoom-in">
+        
+        <section id="hadiah" class="section">
+            <h2 class="hidden anim-fade-in-up">Kirim Hadiah</h2>
+            <p class="hidden anim-fade-in-up" style="--delay: 0.1s; color: var(--color-text-light);">Doa restu Anda merupakan karunia yang sangat berarti. Namun jika memberi adalah ungkapan tanda kasih, Anda dapat memberi kado secara online.</p>
+            <!-- [PERUBAHAN BESAR] Struktur baru untuk kartu hadiah dengan gaya Kartu Kredit -->
+            <div class="gift-card-container hidden anim-fade-in-up" style="--delay: 0.3s;">
+                <div class="gift-card">
+                    <div class="gift-card-face gift-card-front">
+                        <div class="gift-card-header">
+                            <img src="" alt="Logo Bank" class="bank-logo" id="bank-logo-img">
+                            <div class="card-chip">
+                                <div class="chip-line"></div><div class="chip-line"></div><div class="chip-line"></div><div class="chip-line"></div>
+                                <div class="chip-main"></div>
+                            </div>
+                        </div>
+                        <div class="gift-card-body">
+                            <div style="text-align: center; color: rgba(255,255,255,0.7); font-size: 0.9rem;">Klik untuk melihat no rekening</div>
+                        </div>
+                        <div class="gift-card-footer">
+                            <div class="card-holder" id="account-name-front"></div>
+                        </div>
+                    </div>
+                    <div class="gift-card-face gift-card-back">
+                        <div class="magnetic-strip"></div>
+                        <div class="back-content">
+                            <div class="card-number" id="account-number"></div>
+                            <div class="card-holder" id="account-name"></div>
+                            <button class="copy-button" id="copy-account-button">
+                                <span id="copy-button-text">Salin</span>
+                            </button>
+                        </div>
+                        <div style="flex-grow: 1;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="rsvp" class="section">
+            <h2 class="hidden anim-fade-in-up">Konfirmasi Kehadiran</h2>
+             <div class="rsvp-wishes-container hidden anim-fade-in-up" style="--delay: 0.2s;">
+                <form id="rsvp-form" class="rsvp-form">
+                    <div class="form-group">
+                        <label for="nama">Nama Anda</label>
+                        <input type="text" id="nama" name="nama" placeholder="Tuliskan nama Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <fieldset style="border: none; padding: 0; margin: 0;">
+                            <legend>Konfirmasi Kehadiran</legend>
+                            <div class="kehadiran-options">
+                                <input type="radio" id="hadir" name="kehadiran" value="Hadir" required><label for="hadir">Hadir</label>
+                                <input type="radio" id="tidak-hadir" name="kehadiran" value="Tidak Hadir"><label for="tidak-hadir">Tidak Hadir</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="form-group" id="jumlah-tamu-group" style="display: none;">
+                        <label for="jumlah">Jumlah Tamu (termasuk Anda)</label>
+                        <select id="jumlah" name="jumlah">
+                            <option value="1">1 Orang</option>
+                            <option value="2">2 Orang</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ucapan">Ucapan & Doa</label>
+                        <textarea id="ucapan" name="ucapan" placeholder="Tuliskan ucapan dan doa Anda..." required></textarea>
+                    </div>
+                    <button type="submit" class="rsvp-button">Kirim Konfirmasi</button>
+                    <p id="form-status" style="text-align: center; margin-top: 15px;"></p>
+                </form>
+            </div>
+            <div id="wishes-gallery-container" style="margin-top: 2rem; display: none;">
+                <h2 class="hidden anim-fade-in-up">Ucapan & Doa</h2>
+                <div id="wishes-gallery" class="wishes-gallery"></div>
+                <!-- [PERUBAHAN BARU] Kontrol Paginasi -->
+                <div id="wishes-pagination" class="wishes-pagination" style="display: none;">
+                    <!-- Konten diisi oleh JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider hidden anim-zoom-in">
+
+        <footer class="section" style="margin-bottom: 5vh;">
+            <div class="hidden anim-fade-in-up" style="padding-top: 2rem;">
+                <!-- [PERUBAHAN] Menggunakan font skrip untuk penutup -->
+                <h2 style="font-family: var(--font-script); font-size: clamp(4rem, 15vw, 5.5rem); margin: 2rem 0; font-weight: 400; color: var(--color-gold);">
+                    Matur Suksma
+                </h2>
+                <div class="creator-credit" id="creator-credit"></div>
+                <div class="social-links">
+                    <a href="" target="_blank" title="Instagram" id="instagram-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    <a href="" target="_blank" title="WhatsApp" id="whatsapp-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- [PERUBAHAN BARU] Menu Navigasi Bawah -->
+    <div class="bottom-nav-container">
+        <nav id="bottom-nav">
+            <ul class="nav-list">
+                <!-- [PERBAIKAN] Elemen highlight dipindah ke sini, sebagai anak langsung dari <ul> -->
+                <div class="nav-highlight"></div>
+                <li class="nav-item">
+                    <a href="#mempelai" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg><span>Mempelai</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#acara" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg><span>Acara</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#galeri" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg><span>Galeri</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#rsvp" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span>RSVP</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- [KREASI BARU] SVG Filter untuk Navigasi Liquid Glass -->
+    <svg class="liquid-nav-filter-svg">
+      <filter id="liquid-nav-filter" primitiveUnits="objectBoundingBox">
+        <feImage result="map" width="100%" height="100%" x="0" y="0" href="data:image/webp;base64,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"/>
+
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.04" result="blur"/>
+        <feDisplacementMap 
+                           id="disp" 
+                           in="blur" 
+                           in2="map" 
+                           scale="0.5" 
+                           xChannelSelector="R" 
+                           yChannelSelector="G">
+        </feDisplacementMap>
+      </filter>
+    </svg>
+
+    <!-- [PERBAIKAN] CSS untuk Efek Liquid Glass di Navigasi -->
+    <style>
+        .nav-list {
+            position: relative; /* Diperlukan untuk memposisikan highlight */
+            z-index: 1; /* Pastikan list di atas background nav */
+        }
+        .nav-highlight {
+            position: absolute;
+            top: 50%; /* Posisi vertikal di tengah */
+            transform: translateY(-50%); /* Penyesuaian agar benar-benar di tengah */
+            height: calc(100% - 8px); /* Tinggi highlight dengan padding 4px atas/bawah */
+            /* [PERUBAHAN] Mengganti warna solid dengan efek kaca buram */
+            background-color: rgba(255, 255, 255, 0.1); /* Warna putih sangat transparan */
+            backdrop-filter: blur(10px); /* Efek blur utama */
+            border-radius: 50px; /* Bentuk pil */
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); /* Transisi lebih smooth */
+            /* [PERUBAHAN] Border dan shadow untuk ilusi kaca */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        /* [PERUBAHAN BARU] Item yang tidak aktif dibuat sedikit pudar & blur */
+        .nav-item a {
+            transition: opacity 0.4s ease, filter 0.4s ease, color 0.4s ease;
+            opacity: 0.7;
+            filter: blur(0.5px);
+        }
+        .nav-item a.active {
+            /* [PERUBAHAN] Item aktif menjadi jelas dan terang */
+            color: var(--color-text-light);
+            opacity: 1;
+            filter: blur(0px);
+            transform: translateY(0); /* Menghapus efek angkat agar fokus pada blur */
+        }
+    </style>
+
+    <style>
+        .nav-list {
+            position: relative; /* Diperlukan untuk memposisikan highlight */
+            z-index: 1; /* Pastikan list di atas background nav */
+        }
+        .nav-highlight {
+            position: absolute;
+            top: 50%; /* Posisi vertikal di tengah */
+            transform: translateY(-50%); /* Penyesuaian agar benar-benar di tengah */
+            height: calc(100% - 8px); /* Tinggi highlight dengan padding 4px atas/bawah */
+            /* [PERBAIKAN] Menyempurnakan efek Liquid Glass pada highlight */
+            background-color: color-mix(in srgb, var(--color-gold) 15%, transparent);
+            backdrop-filter: blur(10px) saturate(150%);
+            -webkit-backdrop-filter: blur(10px) saturate(150%);
+            border-radius: 50px; /* Bentuk pil */
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); /* Transisi lebih smooth */
+            /* [PERBAIKAN] Menambahkan shadow dan highlight internal untuk efek 3D kaca */
+            box-shadow: 
+                inset 0 0 0 1.5px color-mix(in srgb, #fff 10%, transparent),
+                inset 2px 1px 0px -1px color-mix(in srgb, #fff 80%, transparent), 
+                inset -1.5px -1px 0px -1px color-mix(in srgb, #fff 70%, transparent), 
+                inset -1px 2px 3px -1px color-mix(in srgb, #000 20%, transparent), 
+                inset 0px -4px 1px -2px color-mix(in srgb, #000 10%, transparent), 
+                0px 3px 6px 0px color-mix(in srgb, #000 15%, transparent);
+            border: none; /* Border lama tidak diperlukan lagi */
+        }
+        /* [PERUBAHAN BARU] Item yang tidak aktif dibuat sedikit pudar & blur */
+        .nav-item a {
+            transition: opacity 0.4s ease, filter 0.4s ease, color 0.4s ease;
+            opacity: 0.7;
+            filter: blur(0.5px);
+        }
+        .nav-item a.active {
+            /* [PERUBAHAN] Item aktif menjadi jelas dan terang */
+            color: var(--color-text-light);
+            opacity: 1;
+            filter: blur(0px);
+            transform: translateY(0); /* Menghapus efek angkat agar fokus pada blur */
+        }
+    </style>
+
+    <!-- [KREASI BARU] Script untuk Carousel (Swiper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- PUSAT KONTROL DATA & SCRIPT (Tidak ada perubahan fungsionalitas) -->
+    <script>
+        const invitationData = {
+            groom: { name: "I gst putu riandiana", familyRelation: "Putra pertama dari pasangan", father: "I gst putu sudiana", mother: "Made widiani" },
+            bride: { name: "Ni komang widiasih", familyRelation: "Putri kedua dari pasangan", father: "I wayan ridam", mother: "Gst ayu nyoman winarti" },
+                ceremony: { subject: "Upacara Pawiwahan (Pernikahan) putra-putri kami." }, 
+            event: { dateTime: "Mar 23, 2026 16:00:00", day: "Senin", date: "23", month: "Maret", year: "2026", time: "16.00 WITA - Selesai", location: "Tegalmengkeb, Kabupaten Tabanan", mapUrl: "https://maps.app.goo.gl/GYovusDyrztHzWyB7?g_st=iw" },
+            gift: { bankName: "BNI", bankLogoUrl: "https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/2560px-BNI_logo.svg.png", accountNumber: "12357474747", accountName: "a.n. Ni Made asik asik jos" },
+            quote: { text: `"Devan bhavayatanena te deva bhavayantu vah parasparam bhavayantah sreyah param avapsyatha"`, source: "(Bhagavad Gita 3:11)", translation: "Dengan ini (Yadnya), kami berbakti kepada Hyang Widhi dan dengan ini pula Hyang Widhi memelihara dan mengasihi kamu. Dengan saling memelihara satu sama lain, kamu akan mencapai kebaikan yang maha tinggi." },
+            creator: { name: "Story Bali Undangan", instagram: "https://www.instagram.com/storybali?", whatsapp: "https://wa.me/message/RNPBCG25N5V2A1" }
+        };
+
+            // [PERUBAHAN BARU] Variabel global untuk paginasi ucapan
+            let allWishes = [];
+            let currentPage = 1;
+            const wishesPerPage = 5;
+
+        // SCRIPT UTAMA (Fungsionalitas sama, hanya beberapa penyesuaian untuk ID baru jika ada)
+        document.addEventListener('DOMContentLoaded', function() {
+            function getGuestName() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const guest = urlParams.get('to');
+                if (guest) {
+                    const guestName = guest.replace(/[+]/g, ' ').replace(/%20/g, ' ');
+                    document.getElementById('guest-name').textContent = guestName;
+                    document.getElementById('envelope-guest-name').textContent = guestName;
+                    document.getElementById('nama').value = guestName;
+                }
+            }
+
+            // [PERUBAHAN BARU] Fungsi untuk merender ucapan berdasarkan halaman
+            function renderWishes(page) {
+                const wishesContainer = document.getElementById('wishes-gallery');
+                const paginationContainer = document.getElementById('wishes-pagination');
+                const galleryContainer = document.getElementById('wishes-gallery-container');
+                
+                currentPage = page;
+                wishesContainer.innerHTML = '';
+
+                if (allWishes.length === 0) {
+                    galleryContainer.innerHTML = '<p style="text-align: center;">Jadilah yang pertama mengirim ucapan!</p>';
+                    paginationContainer.style.display = 'none';
+                    return;
+                }
+
+                const startIndex = (page - 1) * wishesPerPage;
+                const endIndex = startIndex + wishesPerPage;
+                const paginatedWishes = allWishes.slice(startIndex, endIndex);
+
+                wishesContainer.innerHTML = paginatedWishes.map((wish, index) => `
+                    <div class="wish-card" style="animation: flipInX 0.8s ${index * 0.15}s both;">
+                        <p class="sender-name">${wish.nama}</p>
+                        <p>${wish.ucapan}</p>
+                        <!-- [PERUBAHAN BARU] Menambahkan ornamen ke dalam kartu -->
+                        <img src="https://github.com/wayanku/undangan-pernikahan-adnyana-swasti/blob/main/UKIRAN%20POJOK%20.webp?raw=true" alt="Ornamen" class="card-ornament-small">
+                    </div>`).join('');
+
+                const totalPages = Math.ceil(allWishes.length / wishesPerPage);
+                paginationContainer.style.display = totalPages > 1 ? 'flex' : 'none';
+                paginationContainer.innerHTML = `
+                    <button class="pagination-button" id="prev-wish-page" ${page === 1 ? 'disabled' : ''}>Sebelumnya</button>
+                    <span style="font-size: 0.9rem; color: var(--color-text-secondary);">${page} dari ${totalPages}</span>
+                    <button class="pagination-button" id="next-wish-page" ${page === totalPages ? 'disabled' : ''}>Selanjutnya</button>
+                `;
+
+                document.getElementById('prev-wish-page')?.addEventListener('click', () => renderWishes(currentPage - 1));
+                document.getElementById('next-wish-page')?.addEventListener('click', () => renderWishes(currentPage + 1));
+            }
+
+            async function loadWishes() {
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxGCIeqSw2c1UnybjCnnprHANJCQF4A7eOYbvpqXjoUDuiU1ZMMzWif_iIFdDWre_De/exec';
+                const galleryContainer = document.getElementById('wishes-gallery-container');
+                if (!galleryContainer) return;
+                
+                try {
+                    const response = await fetch(scriptURL);
+                    const result = await response.json();
+                    
+                    galleryContainer.style.display = 'block';
+                    if (result.result === 'success' && result.data.length > 0) {
+                        allWishes = result.data.slice().reverse(); // Ambil semua dan balik urutannya (terbaru di atas)
+                        renderWishes(1); // Tampilkan halaman pertama
+                    } else {
+                        allWishes = [];
+                        renderWishes(1); // Tampilkan pesan "belum ada ucapan"
+                    }
+                } catch (error) {
+                    console.error('Error fetching wishes!', error.message);
+                    galleryContainer.style.display = 'none';
+                }
+            }
+
+            function startCountdown() {
+                const countdownDate = new Date(invitationData.event.dateTime).getTime();
+                const countdownEl = document.getElementById("countdown");
+                if (!countdownEl) return;
+                const interval = setInterval(() => {
+                    const now = new Date().getTime();
+                    const distance = countdownDate - now;
+                    if (distance < 0) {
+                        clearInterval(interval);
+                        document.getElementById("countdown-section").innerHTML = "<h2>Acara Telah Selesai</h2>";
+                        return;
+                    }
+                    document.getElementById("days").innerText = Math.floor(distance / 864e5).toString().padStart(2, '0');
+                    document.getElementById("hours").innerText = Math.floor(distance % 864e5 / 36e5).toString().padStart(2, '0');
+                    document.getElementById("minutes").innerText = Math.floor(distance % 36e5 / 6e4).toString().padStart(2, '0');
+                    document.getElementById("seconds").innerText = Math.floor(distance % 6e4 / 1e3).toString().padStart(2, '0');
+
+                    // [KREASI BARU] Memicu animasi flip pada kartu detik
+                    const secondsCard = document.getElementById("seconds").parentElement;
+                    secondsCard.classList.remove('tick');
+                    // Memicu reflow agar animasi bisa berjalan lagi
+                    void secondsCard.offsetWidth; 
+                    secondsCard.classList.add('tick');
+                }, 1000);
+            }
+
+            function observeElements() {
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+            }
+
+            // [PERUBAHAN BARU] Fungsi untuk mengontrol latar belakang section spesifik
+            function setupSectionBackgrounds() {
+                const sectionsToWatch = document.querySelectorAll('#mempelai, #galeri');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('bg-visible');
+                        } else {
+                            entry.target.classList.remove('bg-visible');
+                        }
+                    });
+                }, { threshold: 0.2, rootMargin: "0px" }); // threshold 0.2 berarti 20% section harus terlihat
+
+                sectionsToWatch.forEach(section => observer.observe(section));
+            } 
+
+            // [PERUBAHAN BARU] Fungsi untuk navigasi bawah
+            function setupBottomNav() {
+                const sections = document.querySelectorAll('.section');
+                const navLinks = document.querySelectorAll('.nav-link');
+                const navHighlight = document.querySelector('.nav-highlight');
+
+                function moveHighlight(targetLink) {
+                    if (!targetLink || !navHighlight) return;
+                    const targetItem = targetLink.parentElement;
+                    // Pindahkan highlight ke posisi item yang sesuai
+                    navHighlight.style.width = `${targetItem.offsetWidth}px`;
+                    navHighlight.style.left = `${targetItem.offsetLeft}px`;
+                    // Hapus kelas aktif dari semua link, lalu tambahkan ke link target
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    targetLink.classList.add('active');
+                }
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            let activeLink = null;
+                            navLinks.forEach(link => {
+                                if (link.getAttribute('href').substring(1) === entry.target.id) { activeLink = link; }
+                            });
+                            moveHighlight(activeLink);
+                        }
+                    });
+                }, { rootMargin: "-50% 0px -50% 0px" });
+
+                sections.forEach(section => observer.observe(section));
+
+                navLinks.forEach(link => {
+                    link.addEventListener('click', (e) => { 
+                        e.preventDefault(); 
+                        document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' }); 
+                        // Pindahkan highlight secara manual saat diklik untuk respons instan
+                        moveHighlight(e.currentTarget);
+                    });
+                });
+
+                // Pindahkan highlight ke item aktif pertama saat halaman dimuat & saat ukuran window berubah
+                const setActiveHighlight = () => {
+                    const activeLink = document.querySelector('.nav-link.active') || navLinks[0];
+                    moveHighlight(activeLink);
+                };
+                setTimeout(setActiveHighlight, 500); // Saat load awal
+                window.addEventListener('resize', setActiveHighlight); // Saat resize
+            }
+
+            // [KREASI BARU] Fungsi untuk inisialisasi Swiper.js Carousel
+            function setupCarousel() {
+                new Swiper('.swiper-container', {
+                    effect: 'coverflow',
+                    grabCursor: true,
+                    centeredSlides: true,
+                    slidesPerView: 'auto',
+                    initialSlide: 1, // [PERUBAHAN] Memulai dari slide kedua (indeks 1)
+                    coverflowEffect: { rotate: 50, stretch: 0, depth: 100, modifier: 1, slideShadows: true, },
+                    loop: true,
+                    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
+                });
+            }
+
+            const fillData = () => {
+                const data = invitationData;
+                document.getElementById('groom-cover-name').textContent = "Riandiana";
+                document.getElementById('bride-cover-name').textContent = "Widiasih";
+                document.getElementById('cover-date').textContent = `${data.event.day}, ${data.event.date} ${data.event.month} ${data.event.year}`;
+                document.getElementById('ceremony-subject').textContent = data.ceremony.subject;
+                document.getElementById('groom-name').textContent = data.groom.name;
+                document.getElementById('groom-family-relation').textContent = data.groom.familyRelation;
+                // [PERBAIKAN] Mengisi data orang tua ke elemen baru
+                document.getElementById('groom-father-name').textContent = `Bapak ${data.groom.father}`;
+                document.getElementById('groom-mother-name').textContent = `Ibu ${data.groom.mother}`;
+
+                document.getElementById('bride-name').textContent = data.bride.name;
+                document.getElementById('bride-family-relation').textContent = data.bride.familyRelation;
+                document.getElementById('bride-father-name').textContent = `Bapak ${data.bride.father}`;
+                document.getElementById('bride-mother-name').textContent = `Ibu ${data.bride.mother}`;
+
+                document.getElementById('closing-family-name-moved').textContent = `Kel. Bapak ${data.groom.father} & Kel. Bapak ${data.bride.father}`; // [PERBAIKAN] Mengisi data di lokasi baru
+                document.getElementById('quote-text').textContent = data.quote.text;
+                document.getElementById('quote-source').textContent = data.quote.source;
+                document.getElementById('quote-translation').textContent = data.quote.translation;
+                document.getElementById('event-date-text').innerHTML = `${data.event.date} ${data.event.month} ${data.event.year}`;
+                document.getElementById('event-time-text').textContent = data.event.time;
+                document.getElementById('event-location-text').textContent = data.event.location;
+                document.getElementById('event-map-link').href = data.event.mapUrl;
+                document.getElementById('bank-logo-img').src = data.gift.bankLogoUrl;
+                document.getElementById('account-number').textContent = data.gift.accountNumber.replace(/(\d{4})/g, '$1 ').trim(); // Format dengan spasi
+                document.getElementById('account-name').textContent = data.gift.accountName;
+                document.getElementById('account-name-front').textContent = data.gift.accountName; // [PERUBAHAN BARU]
+                document.getElementById('creator-credit').innerHTML = `Made with ♡ by <a href="${data.creator.instagram}" target="_blank">${data.creator.name}</a>`;
+                document.getElementById('instagram-link').href = data.creator.instagram;
+                document.getElementById('whatsapp-link').href = data.creator.whatsapp;
+            };
+
+            const setupEventListeners = () => {
+                const music = document.getElementById('background-music');
+                const musicToggle = document.getElementById('music-toggle');
+                const mainContent = document.getElementById('main-content');
+                const envelopeContainer = document.getElementById('envelope-container');
+                const openEnvelopeButton = document.getElementById('open-envelope-button');
+                const bottomNav = document.querySelector('.bottom-nav-container');
+
+                openEnvelopeButton.addEventListener('click', function() {
+                    // Mencegah klik ganda
+                    this.disabled = true;
+                    this.style.cursor = 'default';
+                    this.style.opacity = '0.7';
+
+                    // JavaScript sekarang menambahkan kelas 'opened' ke elemen yang benar (#envelope-container)
+                    envelopeContainer.classList.add('opened');
+                    music.play().catch(error => console.log("Autoplay dicegah oleh browser."));
+                    musicToggle.classList.add('show', 'playing');
+
+                    setTimeout(() => {
+                        document.documentElement.classList.add('scroll-enabled');
+                        document.body.classList.add('scroll-enabled');
+                        mainContent.style.display = 'block';
+                        bottomNav.classList.add('show');
+                        observeElements();
+                        setupSectionBackgrounds(); // [PERUBAHAN BARU] Jalankan observer untuk latar section
+                    }, 1000); // Waktu ini cocok dengan durasi transisi di CSS (1s)
+                });
+                
+                musicToggle.addEventListener('click', function() {
+                    if (music.paused) { music.play(); this.classList.add('playing'); } 
+                    else { music.pause(); this.classList.remove('playing'); }
+                });
+
+                // [KREASI BARU] Event listener untuk membalik kartu hadiah
+                document.querySelector('.gift-card-container').addEventListener('click', function() {
+                    this.classList.toggle('flipped');
+                });
+
+                document.getElementById('copy-account-button').addEventListener('click', function(e) {
+                    e.stopPropagation(); // Mencegah kartu berbalik saat tombol disalin
+                    navigator.clipboard.writeText(invitationData.gift.accountNumber.replace(/\s/g, ''))
+                    .then(() => {
+                        const buttonText = document.getElementById('copy-button-text');
+                        buttonText.textContent = 'Berhasil Disalin!';
+                        setTimeout(() => { buttonText.textContent = 'Salin'; }, 2000);
+                    });
+                });
+                
+                const rsvpForm = document.getElementById('rsvp-form');
+                rsvpForm.addEventListener('submit', async function(e) { 
+                    e.preventDefault();
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbxGCIeqSw2c1UnybjCnnprHANJCQF4A7eOYbvpqXjoUDuiU1ZMMzWif_iIFdDWre_De/exec';
+                    const formButton = this.querySelector('.rsvp-button');
+                    const formStatus = document.getElementById('form-status');
+                    formButton.disabled = true;
+                    formButton.textContent = 'Mengirim...';
+                    try {
+                        const response = await fetch(scriptURL, { method: 'POST', body: new FormData(this)});
+                        const result = await response.json();
+                        if (result.result === 'success') {
+                            formStatus.textContent = 'Terima kasih, konfirmasi Anda terkirim!';
+                            formStatus.style.color = 'var(--color-gold)';
+                            rsvpForm.reset();
+                            document.getElementById('jumlah-tamu-group').style.display = 'none';
+                            getGuestName(); // Panggil lagi untuk mengisi nama jika ter-reset
+                            await loadWishes();
+                        } else { throw new Error(result.message); }
+                    } catch (error) {
+                        formStatus.textContent = 'Gagal mengirim. Coba lagi.';
+                        formStatus.style.color = 'red';
+                    } finally {
+                        formButton.disabled = false;
+                        formButton.textContent = 'Kirim Konfirmasi';
+                    }
+                });
+                document.querySelectorAll('input[name="kehadiran"]').forEach(opt => { opt.addEventListener('change', function() { document.getElementById('jumlah-tamu-group').style.display = this.value === 'Hadir' ? 'block' : 'none'; }); });
+            };
+
+            if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+            window.scrollTo(0, 0);
+            fillData();
+            getGuestName();
+            setupEventListeners();
+            startCountdown();
+            loadWishes();
+            setupBottomNav(); // Panggil fungsi navigasi
+            setupCarousel(); // Panggil fungsi untuk carousel
+        });
+    </script>
+</body>
+</html>
