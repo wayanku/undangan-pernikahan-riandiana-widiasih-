@@ -423,6 +423,7 @@
             /* [PERUBAHAN] Mengadopsi layout galeri masonry dari contoh */
             display: grid;
             grid-template-columns: 1fr 1fr;
+            grid-auto-rows: 250px; /* [PERBAIKAN] Menetapkan tinggi baris otomatis untuk grid yang seragam */
             grid-auto-flow: dense;
             gap: 1rem;
             margin-top: 20px;
@@ -438,7 +439,10 @@
         .gallery-item.item-wide { grid-column: span 2; }
 
         .gallery-grid .gallery-item img {
-            width: 100%; height: auto; display: block;
+            width: 100%;
+            height: 100%; /* [PERBAIKAN] Mengubah tinggi agar mengisi kontainer */
+            object-fit: cover; /* [PERBAIKAN] Memastikan gambar menutupi area tanpa distorsi */
+            display: block;
             transition: transform 0.4s ease;
         }
         .gallery-grid .gallery-item:hover img { transform: scale(1.05); }
@@ -615,6 +619,13 @@
         .wish-card::before { content: '“'; position: absolute; top: 10px; left: 20px; font-family: var(--font-display); font-size: 3.5rem; color: rgba(181, 148, 81, 0.25); }
         /* [PERUBAHAN BARU] Ornamen kecil untuk kartu ucapan */
         .wish-card .card-ornament-small { position: absolute; width: 40px; height: auto; opacity: 0.3; bottom: 10px; right: 15px; transform: scaleX(-1); }
+        
+        /* [PERUBAHAN BARU] Styling untuk badge kehadiran dan waktu di kartu ucapan */
+        .wish-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; }
+        .attendance-badge { font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+        .attendance-badge.hadir { background-color: rgba(76, 175, 80, 0.2); color: #81c784; border: 1px solid rgba(76, 175, 80, 0.3); }
+        .attendance-badge.tidak-hadir { background-color: rgba(244, 67, 54, 0.2); color: #e57373; border: 1px solid rgba(244, 67, 54, 0.3); }
+        .wish-date { font-size: 0.7rem; color: var(--color-text-secondary); margin-top: 0.5rem; text-align: right; font-style: italic; }
 
         /* KIRIM HADIAH */
         /* [PERUBAHAN BESAR] Desain ulang menjadi seperti kartu kredit premium */
@@ -1177,52 +1188,7 @@
                 <div class="gallery-item"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/445fd517-c414-4eb6-88b5-79b3970172be.JPG?raw=true" alt="Galeri 2" loading="lazy"></div>
                 <div class="gallery-item"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/e0676c60-0059-49ed-bcd4-9cb75d309026.JPG?raw=true" alt="Galeri 3" loading="lazy"></div>
                 <div class="gallery-item"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/e7b34577-1953-4c6c-9a7e-5ea9ddbc73cb.JPG?raw=true" alt="Galeri 4" loading="lazy"></div>
-                <div class="gallery-item item-tall"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/39426383-380d-46f4-b6bf-7468ade08ff7.JPG?raw=true" alt="Galeri 1" loading="lazy"></div>
-            </div>
-        </section>
-
-        <section id="video" class="section hidden anim-fade-in-up">
-            <h2>Video Prewedding</h2>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/hT0XG2j6wng" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-        </section>
-
-        <hr class="divider hidden anim-zoom-in">
-        
-        <section id="hadiah" class="section">
-            <h2 class="hidden anim-fade-in-up">Kirim Hadiah</h2>
-            <p class="hidden anim-fade-in-up" style="--delay: 0.1s; color: var(--color-text-light);">Doa restu Anda merupakan karunia yang sangat berarti. Namun jika memberi adalah ungkapan tanda kasih, Anda dapat memberi kado secara online.</p>
-            <!-- [PERUBAHAN BESAR] Struktur baru untuk kartu hadiah dengan gaya Kartu Kredit -->
-            <div class="gift-card-container hidden anim-fade-in-up" style="--delay: 0.3s;">
-                <div class="gift-card">
-                    <div class="gift-card-face gift-card-front">
-                        <div class="gift-card-header">
-                            <img src="" alt="Logo Bank" class="bank-logo" id="bank-logo-img">
-                            <div class="card-chip">
-                                <div class="chip-line"></div><div class="chip-line"></div><div class="chip-line"></div><div class="chip-line"></div>
-                                <div class="chip-main"></div>
-                            </div>
-                        </div>
-                        <div class="gift-card-body">
-                            <div style="text-align: center; color: rgba(255,255,255,0.7); font-size: 0.9rem;">Klik untuk melihat no rekening</div>
-                        </div>
-                        <div class="gift-card-footer">
-                            <div class="card-holder" id="account-name-front"></div>
-                        </div>
-                    </div>
-                    <div class="gift-card-face gift-card-back">
-                        <div class="magnetic-strip"></div>
-                        <div class="back-content">
-                            <div class="card-number" id="account-number"></div>
-                            <div class="card-holder" id="account-name"></div>
-                            <button class="copy-button" id="copy-account-button">
-                                <span id="copy-button-text">Salin</span>
-                            </button>
-                        </div>
-                        <div style="flex-grow: 1;"></div>
-                    </div>
-                </div>
+                <div class="gallery-item"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/39426383-380d-46f4-b6bf-7468ade08ff7.JPG?raw=true" alt="Galeri 1" loading="lazy"></div>
             </div>
         </section>
 
@@ -1451,13 +1417,30 @@
                 const endIndex = startIndex + wishesPerPage;
                 const paginatedWishes = allWishes.slice(startIndex, endIndex);
 
-                wishesContainer.innerHTML = paginatedWishes.map((wish, index) => `
+                wishesContainer.innerHTML = paginatedWishes.map((wish, index) => {
+                    // [PERUBAHAN BARU] Format Tanggal & Waktu
+                    let timeString = '';
+                    if (wish.timestamp) {
+                        const date = new Date(wish.timestamp);
+                        timeString = date.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }).replace('.', ':');
+                    }
+                    // [PERUBAHAN BARU] Badge Kehadiran
+                    let attendanceBadge = '';
+                    if (wish.kehadiran === 'Hadir') attendanceBadge = '<span class="attendance-badge hadir">Hadir</span>';
+                    else if (wish.kehadiran === 'Tidak Hadir') attendanceBadge = '<span class="attendance-badge tidak-hadir">Tidak Hadir</span>';
+
+                    return `
                     <div class="wish-card" style="animation: flipInX 0.8s ${index * 0.15}s both;">
-                        <p class="sender-name">${wish.nama}</p>
+                        <div class="wish-header">
+                            <p class="sender-name" style="margin: 0;">${wish.nama}</p>
+                            ${attendanceBadge}
+                        </div>
                         <p>${wish.ucapan}</p>
+                        ${timeString ? `<p class="wish-date">${timeString}</p>` : ''}
                         <!-- [PERUBAHAN BARU] Menambahkan ornamen ke dalam kartu -->
                         <img src="https://github.com/wayanku/undangan-pernikahan-adnyana-swasti/blob/main/UKIRAN%20POJOK%20.webp?raw=true" alt="Ornamen" class="card-ornament-small">
-                    </div>`).join('');
+                    </div>`;
+                }).join('');
 
                 const totalPages = Math.ceil(allWishes.length / wishesPerPage);
                 paginationContainer.style.display = totalPages > 1 ? 'flex' : 'none';
@@ -1472,7 +1455,7 @@
             }
 
             async function loadWishes() {
-                const scriptURL = 'https://script.google.com/macros/s/AKfycbxGCIeqSw2c1UnybjCnnprHANJCQF4A7eOYbvpqXjoUDuiU1ZMMzWif_iIFdDWre_De/exec';
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxTpkxgKocvbxfWB8Lh6qafy2CHHyfOgWDuOJ_yty-HyuvYqllmtSlPQckWkxQsANw5/exec';
                 const galleryContainer = document.getElementById('wishes-gallery-container');
                 if (!galleryContainer) return;
                 
@@ -1482,7 +1465,7 @@
                     
                     galleryContainer.style.display = 'block';
                     if (result.result === 'success' && result.data.length > 0) {
-                        allWishes = result.data.slice().reverse(); // Ambil semua dan balik urutannya (terbaru di atas)
+                        allWishes = result.data; // [PERBAIKAN] Data sudah di-reverse dari Google Script (terbaru di atas)
                         renderWishes(1); // Tampilkan halaman pertama
                     } else {
                         allWishes = [];
@@ -1637,10 +1620,6 @@
                 document.getElementById('event-time-text').textContent = data.event.time;
                 document.getElementById('event-location-text').textContent = data.event.location;
                 document.getElementById('event-map-link').href = data.event.mapUrl;
-                document.getElementById('bank-logo-img').src = data.gift.bankLogoUrl;
-                document.getElementById('account-number').textContent = data.gift.accountNumber.replace(/(\d{4})/g, '$1 ').trim(); // Format dengan spasi
-                document.getElementById('account-name').textContent = data.gift.accountName;
-                document.getElementById('account-name-front').textContent = data.gift.accountName; // [PERUBAHAN BARU]
                 document.getElementById('creator-credit').innerHTML = `Made with ♡ by <a href="${data.creator.instagram}" target="_blank">${data.creator.name}</a>`;
                 document.getElementById('instagram-link').href = data.creator.instagram;
                 document.getElementById('whatsapp-link').href = data.creator.whatsapp;
@@ -1680,25 +1659,10 @@
                     else { music.pause(); this.classList.remove('playing'); }
                 });
 
-                // [KREASI BARU] Event listener untuk membalik kartu hadiah
-                document.querySelector('.gift-card-container').addEventListener('click', function() {
-                    this.classList.toggle('flipped');
-                });
-
-                document.getElementById('copy-account-button').addEventListener('click', function(e) {
-                    e.stopPropagation(); // Mencegah kartu berbalik saat tombol disalin
-                    navigator.clipboard.writeText(invitationData.gift.accountNumber.replace(/\s/g, ''))
-                    .then(() => {
-                        const buttonText = document.getElementById('copy-button-text');
-                        buttonText.textContent = 'Berhasil Disalin!';
-                        setTimeout(() => { buttonText.textContent = 'Salin'; }, 2000);
-                    });
-                });
-                
                 const rsvpForm = document.getElementById('rsvp-form');
                 rsvpForm.addEventListener('submit', async function(e) { 
                     e.preventDefault();
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbxGCIeqSw2c1UnybjCnnprHANJCQF4A7eOYbvpqXjoUDuiU1ZMMzWif_iIFdDWre_De/exec';
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbxTpkxgKocvbxfWB8Lh6qafy2CHHyfOgWDuOJ_yty-HyuvYqllmtSlPQckWkxQsANw5/exec';
                     const formButton = this.querySelector('.rsvp-button');
                     const formStatus = document.getElementById('form-status');
                     formButton.disabled = true;
