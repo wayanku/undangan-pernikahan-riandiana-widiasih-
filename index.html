@@ -7,10 +7,10 @@
     <title>Undangan Pernikahan - Riandiana & Widiasih</title>
 
     <!-- Meta Tags Social Media (Data tidak berubah) -->
-    <link rel="icon" href="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.20.webp?raw=true" type="image/jpeg">
+    <link rel="icon" href="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/bdf83c55-c2e6-4695-919a-62952e75057d.JPG?raw=true" type="image/jpeg">
     <meta property="og:title" content="Undangan Pernikahan: Riandiana & Widiasih">
     <meta property="og:description" content="Kami mengundang Anda untuk hadir di acara pernikahan kami. Senin, 23 Maret 2026.">
-    <meta property="og:image" content="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.20.webp?raw=true" id="meta-og-image">
+    <meta property="og:image" content="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/bdf83c55-c2e6-4695-919a-62952e75057d.JPG?raw=true" id="meta-og-image">
     <meta property="og:url" content="https://URL-UNDANGAN-ANDA.com">
     <meta property="og:type" content="website">
 
@@ -73,10 +73,10 @@
             animation: mainBgCrossfade 20s ease-in-out infinite;
         }
         .image-background {
-            background-image: url('https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.50.webp?raw=true');
+            background-image: url('https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/5d79d75f-a3ed-49a4-9b67-d30e3a3539b6.JPG?raw=true');
         }
         .image-background-2 {
-            background-image: url('https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.54.webp?raw=true');
+            background-image: url('https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/b1140009-9b8a-4cf5-889f-895bac3d937f.JPG?raw=true');
             animation-delay: -10s; /* Mulai animasi di tengah jalan */
         }
 
@@ -171,7 +171,7 @@
         }
         .cover-content h1 {
             font-family: var(--font-display);
-            font-size: clamp(4rem, 15vw, 6.5rem);
+            font-size: clamp(3.5rem, 12vw, 5.5rem); /* [PERBAIKAN] Ukuran lebih proporsional agar tidak terlalu besar */
             margin: 0; color: var(--color-text-light); font-weight: 400;
             text-shadow: 0 3px 15px rgba(0,0,0,0.3);
             animation: fadeIn 1.5s 0.5s both;
@@ -215,7 +215,7 @@
         #main-content p { line-height: 1.8; font-size: clamp(1rem, 2.5vw, 1.05rem); color: var(--color-text-secondary); }
         .section h2 {
             font-family: var(--font-display);
-            font-size: clamp(2.8rem, 10vw, 3.5rem);
+            font-size: clamp(2.2rem, 8vw, 3.2rem); /* [PERBAIKAN] Sedikit diperkecil agar lebih elegan */
             color: var(--color-gold);
             font-weight: 700;
             margin: 0 0 1rem 0;
@@ -234,15 +234,18 @@
         .name {
             /* [PERUBAHAN] Menggunakan font skrip untuk nama mempelai */
             font-family: var(--font-script);
-            font-size: clamp(3.5rem, 12vw, 4.5rem);
+            font-size: clamp(2.2rem, 9vw, 3.8rem); /* [PERBAIKAN] Disesuaikan untuk nama panjang seperti 'Riandiana' */
             color: var(--color-gold);
             margin: 10px 0;
             font-weight: 400; /* Font skrip biasanya tidak perlu bold */
+            text-transform: capitalize; /* [PERBAIKAN] Otomatis kapitalisasi huruf awal */
+            line-height: 1.2;
         }
         .parents {
-            font-size: clamp(1rem, 4vw, 1.1rem);
+            font-size: 1.05rem; /* [PERBAIKAN] Ukuran tetap agar mudah dibaca */
             color: var(--color-text-light);
             line-height: 1.6;
+            text-transform: capitalize; /* [PERBAIKAN] Otomatis kapitalisasi huruf awal */
         }
         /* [KREASI BARU] Styling untuk pemisah nama orang tua */
         .parents-separator {
@@ -346,7 +349,8 @@
         .event-card h3 {
             font-family: var(--font-display);
             font-weight: 700; color: var(--color-gold);
-            font-size: 2.2rem; margin: 0 0 0.5rem 0;
+            font-size: clamp(1.8rem, 5vw, 2.2rem); /* [PERBAIKAN] Responsif */
+            margin: 0 0 0.5rem 0;
         }
         .event-card p { font-size: 1rem; margin: 0.25rem 0; }
         /* [PERUBAHAN] Styling untuk ikon acara */
@@ -797,8 +801,15 @@
         .envelope-content { 
             position: relative; /* [PERBAIKAN] Membuat konten menjadi relative */
             z-index: 2; /* [PERBAIKAN] Konten di atas overlay */
-            text-align: center; animation: fadeInUp 1s 0.2s both; }
-        .envelope-content h2 { font-family: var(--font-display); font-size: clamp(3rem, 12vw, 4.5rem); color: var(--color-text-light); margin: 0; text-shadow: 0 3px 15px rgba(0,0,0,0.4); font-weight: 400; }
+            text-align: center; animation: fadeInUp 1s 0.2s both; 
+            width: 100%; padding: 0 20px; /* [PERBAIKAN] Mencegah teks keluar layar di HP kecil */
+        }
+        .envelope-content h2 { 
+            font-family: var(--font-display); 
+            font-size: clamp(2.5rem, 10vw, 4.5rem); /* [PERBAIKAN] Ukuran disesuaikan */
+            color: var(--color-text-light); margin: 0; text-shadow: 0 3px 15px rgba(0,0,0,0.4); font-weight: 400; 
+            line-height: 1.2;
+        }
         .envelope-recipient { margin-top: 1rem; margin-bottom: 0.5rem; }
         #envelope-guest-name { font-weight: bold; font-size: 1.2rem; color: var(--color-gold); }
         #open-envelope-button {
@@ -977,8 +988,8 @@
     <!-- [TEMA BARU] Halaman Amplop -->
     <div id="envelope-container">
         <!-- [PERUBAHAN BARU] Menambahkan DUA gambar latar untuk efek crossfade -->
-        <img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.50.webp?raw=true" alt="Latar Belakang Amplop 1" class="envelope-background-image" id="envelope-bg-1">
-        <img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.54.webp?raw=true" alt="Latar Belakang Amplop 2" class="envelope-background-image" id="envelope-bg-2">
+        <img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/5d79d75f-a3ed-49a4-9b67-d30e3a3539b6.JPG?raw=true" alt="Latar Belakang Amplop 1" class="envelope-background-image" id="envelope-bg-1">
+        <img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/b1140009-9b8a-4cf5-889f-895bac3d937f.JPG?raw=true" alt="Latar Belakang Amplop 2" class="envelope-background-image" id="envelope-bg-2">
         <!-- [PERBAIKAN] Menghapus .envelope-wrapper yang tidak perlu -->
         <div class="envelope-content">
             <h2>Riandiana & Widiasih</h2>
@@ -1001,7 +1012,7 @@
 
     <!-- [TEMA BARU] Sampul Depan -->
     <header id="cover">
-        <img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.20.webp?raw=true" alt="Pasangan" class="cover-background-image" loading="eager">
+        <img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/bdf83c55-c2e6-4695-919a-62952e75057d.JPG?raw=true" alt="Pasangan" class="cover-background-image" loading="eager">
         <div class="cover-content">
             <h1 id="groom-cover-name">Agus</h1>
             <span class="and-symbol">&</span>
@@ -1033,7 +1044,7 @@
                 <div class="mempelai-card-wrapper hidden anim-fade-in-up" style="--delay: 0.2s;">
                     <div id="mempelai-pria" class="mempelai-card">
                         <div class="mempelai-image-wrapper">
-                            <img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.23.webp?raw=true" alt="Mempelai Pria" id="groom-card-image">
+                            <img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/c661da82-caf5-46ed-87c1-308e8fc255b2.JPG?raw=true" alt="Mempelai Pria" id="groom-card-image">
                         </div>
                         <h3 class="name" id="groom-name"></h3>
                         <p id="groom-family-relation" style="margin-bottom: 0.5rem;"></p>
@@ -1051,7 +1062,7 @@
                 <div class="mempelai-card-wrapper hidden anim-fade-in-up" style="--delay: 0.4s;">
                     <div id="mempelai-wanita" class="mempelai-card">
                         <div class="mempelai-image-wrapper">
-                            <img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.25.webp?raw=true" alt="Mempelai Wanita" id="bride-card-image">
+                            <img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/cfb399fa-d6ce-466e-ae70-c8d4ad1e67ed.JPG?raw=true" alt="Mempelai Wanita" id="bride-card-image">
                         </div>
                         <h3 class="name" id="bride-name"></h3>
                         <p id="bride-family-relation" style="margin-bottom: 0.5rem;"></p>
@@ -1145,16 +1156,16 @@
             <div class="swiper-container hidden anim-fade-in-left" style="--delay: 0.2s;">
                 <div class="swiper-wrapper"> 
                     <!-- Slide 1 -->
-                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.50.webp?raw=true" alt="Galeri Geser 1" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/39426383-380d-46f4-b6bf-7468ade08ff7.JPG?raw=true" alt="Galeri Geser 1" loading="lazy"></div>
                     <!-- Slide 2 -->
-                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.54.webp?raw=true" alt="Galeri Geser 2" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/445fd517-c414-4eb6-88b5-79b3970172be.JPG?raw=true" alt="Galeri Geser 2" loading="lazy"></div>
                     <!-- Slide 3 -->
-                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.56.webp?raw=true" alt="Galeri Geser 3" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/e0676c60-0059-49ed-bcd4-9cb75d309026.JPG?raw=true" alt="Galeri Geser 3" loading="lazy"></div>
                     <!-- Slide 4 -->
-                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.57.webp?raw=true" alt="Galeri Geser 4" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/e7b34577-1953-4c6c-9a7e-5ea9ddbc73cb.JPG?raw=true" alt="Galeri Geser 4" loading="lazy"></div>
                     <!-- [PERBAIKAN] Menambahkan duplikat slide untuk memperbaiki loop mode -->
-                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.50.webp?raw=true" alt="Galeri Geser 1 Duplikat" loading="lazy"></div>
-                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.54.webp?raw=true" alt="Galeri Geser 2 Duplikat" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/39426383-380d-46f4-b6bf-7468ade08ff7.JPG?raw=true" alt="Galeri Geser 1 Duplikat" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/445fd517-c414-4eb6-88b5-79b3970172be.JPG?raw=true" alt="Galeri Geser 2 Duplikat" loading="lazy"></div>
                 </div>
                 <!-- Tombol Navigasi -->
                 <div class="swiper-button-next"></div>
@@ -1163,10 +1174,10 @@
 
             <!-- Galeri Masonry yang sudah ada -->
             <div class="gallery-grid hidden anim-fade-in-right" style="--delay: 0.4s;">
-                <div class="gallery-item"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.54.webp?raw=true" alt="Galeri 2" loading="lazy"></div>
-                <div class="gallery-item"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.56.webp?raw=true" alt="Galeri 3" loading="lazy"></div>
-                <div class="gallery-item"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.57.webp?raw=true" alt="Galeri 4" loading="lazy"></div>
-                <div class="gallery-item item-tall"><img src="https://github.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/blob/main/fto1/WhatsApp%20Image%202025-09-11%20at%2018.55.50.webp?raw=true" alt="Galeri 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/445fd517-c414-4eb6-88b5-79b3970172be.JPG?raw=true" alt="Galeri 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/e0676c60-0059-49ed-bcd4-9cb75d309026.JPG?raw=true" alt="Galeri 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/e7b34577-1953-4c6c-9a7e-5ea9ddbc73cb.JPG?raw=true" alt="Galeri 4" loading="lazy"></div>
+                <div class="gallery-item item-tall"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/39426383-380d-46f4-b6bf-7468ade08ff7.JPG?raw=true" alt="Galeri 1" loading="lazy"></div>
             </div>
         </section>
 
@@ -1262,7 +1273,7 @@
         <footer class="section" style="margin-bottom: 5vh;">
             <div class="hidden anim-fade-in-up" style="padding-top: 2rem;">
                 <!-- [PERUBAHAN] Menggunakan font skrip untuk penutup -->
-                <h2 style="font-family: var(--font-script); font-size: clamp(4rem, 15vw, 5.5rem); margin: 2rem 0; font-weight: 400; color: var(--color-gold);">
+                <h2 style="font-family: var(--font-script); font-size: clamp(3.5rem, 12vw, 5rem); margin: 2rem 0; font-weight: 400; color: var(--color-gold);">
                     Matur Suksma
                 </h2>
                 <div class="creator-credit" id="creator-credit"></div>
