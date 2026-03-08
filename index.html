@@ -166,8 +166,9 @@
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             object-fit: cover;
             z-index: -1;
-            filter: blur(2px) brightness(0.8);
-            transform: scale(1.1);
+            filter: brightness(0.85); /* [PERBAIKAN] Menghapus blur agar foto terlihat jelas */
+            transform: scale(1.1); /* Zoom awal untuk animasi */
+            animation: kenBurns 40s ease-in-out infinite; /* [PERBAIKAN] Menambahkan animasi Ken Burns yang lambat dan elegan */
         }
         .cover-content h1 {
             font-family: var(--font-display);
@@ -761,7 +762,9 @@
         /* [TEMA BARU] AMPLOP */
         #envelope-container {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            display: flex; justify-content: center; align-items: center; padding: 20px;
+            display: flex; justify-content: center; 
+            align-items: flex-end; /* [PERBAIKAN] Konten dipindah ke bawah */
+            padding: 20px; padding-bottom: 15vh; /* [PERBAIKAN] Memberi jarak dari dasar layar */
             /* [PERBAIKAN] Mengubah background menjadi solid untuk mencegah 'flash' saat gambar berganti.
                Gradien gelap sekarang diterapkan pada overlay terpisah. */
             background-color: var(--color-dark-bg);
@@ -789,21 +792,22 @@
         /* [PERUBAHAN BARU] Menambahkan gambar latar belakang untuk amplop */
         .envelope-background-image {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
-            filter: blur(1px) brightness(0.9); z-index: -2;
+            filter: brightness(0.9); /* [PERBAIKAN] Menghapus blur */
+            z-index: -2;
             animation: kenBurns 30s ease-in-out infinite;
         }
         /* [PERUBAHAN BARU] Styling untuk gambar yang berganti */
         #envelope-bg-1 {
             animation-delay: 0s, 0s; /* kenBurns, imageCrossfade */
             animation-name: kenBurns, imageCrossfade;
-            animation-duration: 30s, 20s; /* Durasi kenBurns, durasi crossfade */
+            animation-duration: 30s, 14s; /* [PERBAIKAN] Durasi crossfade dipercepat */
             animation-timing-function: ease-in-out, ease-in-out;
             animation-iteration-count: infinite, infinite;
         }
         #envelope-bg-2 {
-            animation-delay: -10s, -10s; /* Mulai animasi di tengah jalan */
+            animation-delay: -7s, -7s; /* [PERBAIKAN] Disesuaikan dengan durasi baru (setengah dari 14s) */
             animation-name: kenBurns, imageCrossfade;
-            animation-duration: 30s, 20s;
+            animation-duration: 30s, 14s; /* [PERBAIKAN] Durasi crossfade dipercepat */
             animation-timing-function: ease-in-out, ease-in-out;
             animation-iteration-count: infinite, infinite;
         }
@@ -1371,8 +1375,8 @@
     <!-- PUSAT KONTROL DATA & SCRIPT (Tidak ada perubahan fungsionalitas) -->
     <script>
         const invitationData = {
-            groom: { name: "I gst putu riandiana", familyRelation: "Putra pertama dari pasangan", father: "I gst putu sudiana", mother: "Made widiani" },
-            bride: { name: "Ni komang widiasih", familyRelation: "Putri kedua dari pasangan", father: "I wayan ridam", mother: "Gst ayu nyoman winarti" },
+            groom: { name: "I gst putu riandiana", familyRelation: "Putra pertama dari pasangan", father: "I gst putu sudiana", mother: "Ni made widiani" },
+            bride: { name: "Ni komang widiasih", familyRelation: "Putri ketiga dari pasangan", father: "I wayan ridam", mother: "Gst ayu nyoman winarti" },
                 ceremony: { subject: "Upacara Pawiwahan (Pernikahan) putra-putri kami." }, 
             event: { dateTime: "Mar 23, 2026 16:00:00", day: "Senin", date: "23", month: "Maret", year: "2026", time: "16.00 WITA - Selesai", location: "Tegalmengkeb, Kabupaten Tabanan", mapUrl: "https://maps.app.goo.gl/GYovusDyrztHzWyB7?g_st=iw" },
             gift: { bankName: "BNI", bankLogoUrl: "https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/2560px-BNI_logo.svg.png", accountNumber: "12357474747", accountName: "a.n. Ni Made asik asik jos" },
