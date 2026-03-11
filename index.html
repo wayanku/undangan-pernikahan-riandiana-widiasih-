@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Undangan Pernikahan - Riandiana & Widiasih</title>
+    <title>Undangan Pernikahan - Rian & Widi</title>
 
     <!-- Meta Tags Social Media (Data tidak berubah) -->
-    <link rel="icon" href="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/bdf83c55-c2e6-4695-919a-62952e75057d.JPG?raw=true" type="image/jpeg">
-    <meta property="og:title" content="Undangan Pernikahan: Riandiana & Widiasih">
+    <link rel="icon" href="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/bdf83c55-c2e6-4695-919a-62952e75057d.JPG" type="image/jpeg">
+    <meta property="og:title" content="Undangan Pernikahan: Rian & Widi">
     <meta property="og:description" content="Kami mengundang Anda untuk hadir di acara pernikahan kami. Senin, 23 Maret 2026.">
-    <meta property="og:image" content="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/bdf83c55-c2e6-4695-919a-62952e75057d.JPG?raw=true" id="meta-og-image">
+    <meta property="og:image" content="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/bdf83c55-c2e6-4695-919a-62952e75057d.JPG" id="meta-og-image">
     <meta property="og:url" content="https://URL-UNDANGAN-ANDA.com">
     <meta property="og:type" content="website">
 
@@ -77,10 +77,10 @@
             will-change: opacity; /* [PERBAIKAN] Optimasi performa render */
         }
         .image-background {
-            background-image: url('https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/5d79d75f-a3ed-49a4-9b67-d30e3a3539b6.JPG?raw=true');
+            background-image: url('https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/5d79d75f-a3ed-49a4-9b67-d30e3a3539b6.JPG');
         }
         .image-background-2 {
-            background-image: url('https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/b1140009-9b8a-4cf5-889f-895bac3d937f.JPG?raw=true');
+            background-image: url('https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/b1140009-9b8a-4cf5-889f-895bac3d937f.JPG');
             animation-delay: -10s; /* Mulai animasi di tengah jalan */
         }
 
@@ -459,7 +459,7 @@
             height: 60px; /* Menyesuaikan tinggi agar gambar tidak terpotong */
             margin: 4rem auto;
             border: 0;
-            background-image: url("https://github.com/wayanku/pernikahan-tema-2/blob/main/pemisah.webp?raw=true");
+            background-image: url("https://raw.githubusercontent.com/wayanku/pernikahan-tema-2/main/pemisah.webp");
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
@@ -801,6 +801,39 @@
             margin-left: auto;
         }
 
+        /* [KREASI BARU] Galeri Rol Film */
+        @keyframes scroll-left {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        .film-roll-container {
+            margin-top: 2rem;
+            width: 100vw; /* Lebar penuh viewport */
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        }
+        .film-roll-track {
+            display: flex;
+            /* (lebar gambar + margin kanan) * jumlah gambar * 2 */
+            width: calc((220px + 1rem) * 20); /* 10 gambar asli + 10 duplikat */
+            animation: scroll-left 80s linear infinite;
+        }
+        .film-roll-track:hover {
+            animation-play-state: paused;
+        }
+        .film-roll-track img {
+            width: 220px; /* Sedikit lebih kecil */
+            height: 160px;
+            object-fit: cover;
+            margin-right: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
         /* FOOTER */
         .creator-credit a { color: var(--color-gold); font-weight: 600; text-decoration: none; }
         .social-links a { color: var(--color-gold); }
@@ -1058,11 +1091,11 @@
     <!-- [TEMA BARU] Halaman Amplop -->
     <div id="envelope-container">
         <!-- [PERUBAHAN BARU] Menambahkan DUA gambar latar untuk efek crossfade -->
-        <img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/5d79d75f-a3ed-49a4-9b67-d30e3a3539b6.JPG?raw=true" alt="Latar Belakang Amplop 1" class="envelope-background-image" id="envelope-bg-1">
-        <img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/b1140009-9b8a-4cf5-889f-895bac3d937f.JPG?raw=true" alt="Latar Belakang Amplop 2" class="envelope-background-image" id="envelope-bg-2">
+        <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/5d79d75f-a3ed-49a4-9b67-d30e3a3539b6.JPG" alt="Latar Belakang Amplop 1" class="envelope-background-image" id="envelope-bg-1">
+        <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/b1140009-9b8a-4cf5-889f-895bac3d937f.JPG" alt="Latar Belakang Amplop 2" class="envelope-background-image" id="envelope-bg-2">
         <!-- [PERBAIKAN] Menghapus .envelope-wrapper yang tidak perlu -->
         <div class="envelope-content">
-            <h2>Riandiana & Widiasih</h2>
+            <h2>Rian & Widi</h2>
             <div class="envelope-guest-area">
                 <p class="envelope-recipient">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
                 <strong id="envelope-guest-name">Tamu Undangan</strong>
@@ -1073,11 +1106,11 @@
 
     <!-- [KREASI BARU] Audio untuk efek suara klik -->
     <audio id="click-sound" preload="auto">
-        <source src="https://github.com/wayanku/undangan-pernikahan-adnyana-swasti/raw/main/click.mp3" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-adnyana-swasti/main/click.mp3" type="audio/mpeg">
     </audio>
     <!-- Audio Player (Fungsionalitas tidak berubah) -->
     <audio id="background-music" loop preload="auto">
-        <source src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-agus-surya-adnyana-luh-swasti/main/Marry%20Your%20Daughter%20-%20Brian%20McKnight%20(animation).mp3" type="audio/mpeg">
+        <source src="https://peljkofgteuqedzfjlhi.supabase.co/storage/v1/object/public/mancing%20jepang/hingga%20tua%20.mp3" type="audio/mpeg">
     </audio>
     <div id="music-toggle">
         <!-- [PERBAIKAN] Mengganti ikon menjadi not balok -->
@@ -1086,7 +1119,7 @@
 
     <!-- [TEMA BARU] Sampul Depan -->
     <header id="cover">
-        <img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/bdf83c55-c2e6-4695-919a-62952e75057d.JPG?raw=true" alt="Pasangan" class="cover-background-image" loading="eager">
+        <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/bdf83c55-c2e6-4695-919a-62952e75057d.JPG" alt="Pasangan" class="cover-background-image" loading="eager">
         <div class="cover-content">
             <h1 id="groom-cover-name">Agus</h1>
             <span class="and-symbol">&</span>
@@ -1118,7 +1151,7 @@
                 <div class="mempelai-card-wrapper hidden anim-fade-in-up" style="--delay: 0.2s;">
                     <div id="mempelai-pria" class="mempelai-card">
                         <div class="mempelai-image-wrapper">
-                            <img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/c661da82-caf5-46ed-87c1-308e8fc255b2.JPG?raw=true" alt="Mempelai Pria" id="groom-card-image">
+                            <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/c661da82-caf5-46ed-87c1-308e8fc255b2.JPG" alt="Mempelai Pria" id="groom-card-image">
                         </div>
                         <h3 class="name" id="groom-name"></h3>
                         <p id="groom-family-relation" style="margin-bottom: 0.5rem;"></p>
@@ -1128,15 +1161,15 @@
                         <p class="parents" id="groom-mother-name" style="font-weight: 500; margin: 0;"></p>
                     </div>
                     <!-- [KREASI BARU] Menambahkan ornamen di pojok kanan bawah dari contoh -->
-                    <img src="https://github.com/wayanku/undangan-pernikahan-adnyana-swasti/blob/main/UKIRAN%20POJOK%20.webp?raw=true" alt="Ornamen Kartu" class="card-ornament bottom-right">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-adnyana-swasti/main/UKIRAN%20POJOK%20.webp" alt="Ornamen Kartu" class="card-ornament bottom-right">
                 </div>
         
-                <div class="and-separator hidden anim-zoom-in"><img src="https://github.com/wayanku/pernikahan-tema-2/blob/main/cincin.webp?raw=true" alt="Cincin" loading="lazy"></div>
+                <div class="and-separator hidden anim-zoom-in"><img src="https://raw.githubusercontent.com/wayanku/pernikahan-tema-2/main/cincin.webp" alt="Cincin" loading="lazy"></div>
     
                 <div class="mempelai-card-wrapper hidden anim-fade-in-up" style="--delay: 0.4s;">
                     <div id="mempelai-wanita" class="mempelai-card">
                         <div class="mempelai-image-wrapper">
-                            <img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/cfb399fa-d6ce-466e-ae70-c8d4ad1e67ed.JPG?raw=true" alt="Mempelai Wanita" id="bride-card-image">
+                            <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/cfb399fa-d6ce-466e-ae70-c8d4ad1e67ed.JPG" alt="Mempelai Wanita" id="bride-card-image">
                         </div>
                         <h3 class="name" id="bride-name"></h3>
                         <p id="bride-family-relation" style="margin-bottom: 0.5rem;"></p>
@@ -1146,7 +1179,7 @@
                         <p class="parents" id="bride-mother-name" style="font-weight: 500; margin: 0;"></p>
                     </div>
                     <!-- [KREASI BARU] Menambahkan ornamen di pojok kiri bawah -->
-                    <img src="https://github.com/wayanku/undangan-pernikahan-adnyana-swasti/blob/main/UKIRAN%20POJOK%20.webp?raw=true" alt="Ornamen Kartu" class="card-ornament bottom-left">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-adnyana-swasti/main/UKIRAN%20POJOK%20.webp" alt="Ornamen Kartu" class="card-ornament bottom-left">
                 </div>
             </div>
         </section>
@@ -1230,16 +1263,24 @@
             <div class="swiper-container hidden anim-fade-in-left" style="--delay: 0.2s;">
                 <div class="swiper-wrapper"> 
                     <!-- Slide 1 -->
-                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/39426383-380d-46f4-b6bf-7468ade08ff7.JPG?raw=true" alt="Galeri Geser 1" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/39426383-380d-46f4-b6bf-7468ade08ff7.JPG" alt="Galeri Geser 1" loading="lazy"></div>
                     <!-- Slide 2 -->
-                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/445fd517-c414-4eb6-88b5-79b3970172be.JPG?raw=true" alt="Galeri Geser 2" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/445fd517-c414-4eb6-88b5-79b3970172be.JPG" alt="Galeri Geser 2" loading="lazy"></div>
                     <!-- Slide 3 -->
-                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/e0676c60-0059-49ed-bcd4-9cb75d309026.JPG?raw=true" alt="Galeri Geser 3" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/e0676c60-0059-49ed-bcd4-9cb75d309026.JPG" alt="Galeri Geser 3" loading="lazy"></div>
                     <!-- Slide 4 -->
-                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/e7b34577-1953-4c6c-9a7e-5ea9ddbc73cb.JPG?raw=true" alt="Galeri Geser 4" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/e7b34577-1953-4c6c-9a7e-5ea9ddbc73cb.JPG" alt="Galeri Geser 4" loading="lazy"></div>
+                    <!-- [TAMBAHAN BARU] -->
+                    <div class="swiper-slide"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/653a68a0-c44b-4695-a838-b5f23999d11f.JPG" alt="Galeri Geser 5" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/769a5c1c-7147-4708-9c86-236e5b78174e.JPG" alt="Galeri Geser 6" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/af00e1bd-56fc-4f60-af69-e38a1584ba6a.JPG" alt="Galeri Geser 7" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/d3e9cf7c-f2c9-4705-a303-840958c85c0b.JPG" alt="Galeri Geser 8" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/ef0c239d-90b1-4752-811e-c5e843e65d73.JPG" alt="Galeri Geser 9" loading="lazy"></div>
                     <!-- [PERBAIKAN] Menambahkan duplikat slide untuk memperbaiki loop mode -->
-                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/39426383-380d-46f4-b6bf-7468ade08ff7.JPG?raw=true" alt="Galeri Geser 1 Duplikat" loading="lazy"></div>
-                    <div class="swiper-slide"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/445fd517-c414-4eb6-88b5-79b3970172be.JPG?raw=true" alt="Galeri Geser 2 Duplikat" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/39426383-380d-46f4-b6bf-7468ade08ff7.JPG" alt="Galeri Geser 1 Duplikat" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/445fd517-c414-4eb6-88b5-79b3970172be.JPG" alt="Galeri Geser 2 Duplikat" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/e0676c60-0059-49ed-bcd4-9cb75d309026.JPG" alt="Galeri Geser 3 Duplikat" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/e7b34577-1953-4c6c-9a7e-5ea9ddbc73cb.JPG" alt="Galeri Geser 4 Duplikat" loading="lazy"></div>
                 </div>
                 <!-- Tombol Navigasi -->
                 <div class="swiper-button-next"></div>
@@ -1248,10 +1289,47 @@
 
             <!-- Galeri Masonry yang sudah ada -->
             <div class="gallery-grid hidden anim-fade-in-right" style="--delay: 0.4s;">
-                <div class="gallery-item"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/445fd517-c414-4eb6-88b5-79b3970172be.JPG?raw=true" alt="Galeri 2" loading="lazy"></div>
-                <div class="gallery-item"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/e0676c60-0059-49ed-bcd4-9cb75d309026.JPG?raw=true" alt="Galeri 3" loading="lazy"></div>
-                <div class="gallery-item"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/e7b34577-1953-4c6c-9a7e-5ea9ddbc73cb.JPG?raw=true" alt="Galeri 4" loading="lazy"></div>
-                <div class="gallery-item"><img src="https://github.com/wayanku/undangan-pernikahan-riandiana-widiasih-/blob/main/39426383-380d-46f4-b6bf-7468ade08ff7.JPG?raw=true" alt="Galeri 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/445fd517-c414-4eb6-88b5-79b3970172be.JPG" alt="Galeri 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/e0676c60-0059-49ed-bcd4-9cb75d309026.JPG" alt="Galeri 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/e7b34577-1953-4c6c-9a7e-5ea9ddbc73cb.JPG" alt="Galeri 4" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/39426383-380d-46f4-b6bf-7468ade08ff7.JPG" alt="Galeri 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/653a68a0-c44b-4695-a838-b5f23999d11f.JPG" alt="Galeri 5" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/769a5c1c-7147-4708-9c86-236e5b78174e.JPG" alt="Galeri 6" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/af00e1bd-56fc-4f60-af69-e38a1584ba6a.JPG" alt="Galeri 7" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/d3e9cf7c-f2c9-4705-a303-840958c85c0b.JPG" alt="Galeri 8" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/ef0c239d-90b1-4752-811e-c5e843e65d73.JPG" alt="Galeri 9" loading="lazy"></div>
+            </div>
+        </section>
+
+        <!-- [KREASI BARU] Galeri Rol Film -->
+        <section id="film-roll-gallery" class="section">
+            <h2 class="hidden anim-fade-in-up">Kenangan Kami</h2>
+            <p class="subtitle hidden anim-fade-in-up" style="--delay: 0.1s;">Jejak Langkah Bersama</p>
+            <div class="film-roll-container hidden anim-fade-in-up" style="--delay: 0.2s;">
+                <div class="film-roll-track">
+                    <!-- Gambar yang sudah ada + baru -->
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/39426383-380d-46f4-b6bf-7468ade08ff7.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/445fd517-c414-4eb6-88b5-79b3970172be.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/e0676c60-0059-49ed-bcd4-9cb75d309026.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/e7b34577-1953-4c6c-9a7e-5ea9ddbc73cb.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/653a68a0-c44b-4695-a838-b5f23999d11f.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/769a5c1c-7147-4708-9c86-236e5b78174e.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/af00e1bd-56fc-4f60-af69-e38a1584ba6a.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/d3e9cf7c-f2c9-4705-a303-840958c85c0b.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/ef0c239d-90b1-4752-811e-c5e843e65d73.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/4ab5f751-4e7c-44ff-8b86-facdcb086b74.JPG" alt="Kenangan" loading="lazy">
+                    <!-- Duplikat untuk loop -->
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/39426383-380d-46f4-b6bf-7468ade08ff7.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/445fd517-c414-4eb6-88b5-79b3970172be.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/e0676c60-0059-49ed-bcd4-9cb75d309026.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/e7b34577-1953-4c6c-9a7e-5ea9ddbc73cb.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/653a68a0-c44b-4695-a838-b5f23999d11f.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/769a5c1c-7147-4708-9c86-236e5b78174e.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/af00e1bd-56fc-4f60-af69-e38a1584ba6a.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/d3e9cf7c-f2c9-4705-a303-840958c85c0b.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/ef0c239d-90b1-4752-811e-c5e843e65d73.JPG" alt="Kenangan" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-riandiana-widiasih-/main/4ab5f751-4e7c-44ff-8b86-facdcb086b74.JPG" alt="Kenangan" loading="lazy">
+                </div>
             </div>
         </section>
 
@@ -1508,7 +1586,7 @@
                         <p>${wish.ucapan}</p>
                         ${timeString ? `<p class="wish-date">${timeString}</p>` : ''}
                         <!-- [PERUBAHAN BARU] Menambahkan ornamen ke dalam kartu -->
-                        <img src="https://github.com/wayanku/undangan-pernikahan-adnyana-swasti/blob/main/UKIRAN%20POJOK%20.webp?raw=true" alt="Ornamen" class="card-ornament-small">
+                        <img src="https://raw.githubusercontent.com/wayanku/undangan-pernikahan-adnyana-swasti/main/UKIRAN%20POJOK%20.webp" alt="Ornamen" class="card-ornament-small">
                     </div>`;
                 }).join('');
 
@@ -1732,8 +1810,8 @@
 
             const fillData = () => {
                 const data = invitationData;
-                document.getElementById('groom-cover-name').textContent = "Riandiana";
-                document.getElementById('bride-cover-name').textContent = "Widiasih";
+                document.getElementById('groom-cover-name').textContent = "Rian";
+                document.getElementById('bride-cover-name').textContent = "Widi";
                 document.getElementById('cover-date').textContent = `${data.event.day}, ${data.event.date} ${data.event.month} ${data.event.year}`;
                 document.getElementById('ceremony-subject').textContent = data.ceremony.subject;
                 document.getElementById('groom-name').textContent = data.groom.name;
